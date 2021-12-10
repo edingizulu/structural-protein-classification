@@ -1,19 +1,5 @@
 # ProjectTemplate
 
-## Instructions à destination des chefs de projet
-
-Ce template permet d'initialiser le repository d'un projet fil rouge dans le cadre de la formation [DataScientest](https://datascientest.com/). Pour ce faire, merci de suivre les instructions suivantes (**chef de projet**):
-
-- Importez (https://github.com/new/import) ce repository (https://github.com/DataScientest-Studio/project-template) dans un nouveau **repository privé dans l'organisation DataScientest-Studio**.
-
-![Import Project](images/import-project-template.png)
-
-- Modifiez le README.md du nouveau projet (vous pouvez le faire directement depuis l'appli web GitHub via l'adresse https://github.com/DataScientest-Studio/NOM_DU_REPO/edit/main/README.md) :
-  - Supprimez la présente section (Instructions à destination des chefs de projet)
-  - Remplacez le titre `# ProjectTemplate` par `# Nom Du Projet`
-- Supprimez l'image d'explication d'importation du repo :
-  https://github.com/DataScientest-Studio/NOM_DU_REPO/delete/main/images/import-project-template.png
-- Vous pouvez désormais ajouter les membres du projet au repo via la page : https://github.com/DataScientest-Studio/NOM_DU_REPO/settings/access
 
 ## Explications et Instructions
 
