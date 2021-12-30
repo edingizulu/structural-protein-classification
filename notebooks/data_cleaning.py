@@ -69,13 +69,23 @@ def _ph_value(ph):
 def map_phValue(data):
     return data.map(_ph_value)
 
+def handle_missing(df:DataFrame)->DataFrame:
+    data = df.copy()
+    #macromoleculeType and crystallizationMethod replace by mode
+    data['macromoleculeType']     = data.macromoleculeType.fillna(data.macromoleculeType.mode()[0])
+    data['crystallizationMethod'] = data.crystallizationMethod.fillna(data.crystallizationMethod.mode()[0])
+    # for numerical values replace nan by median 
+    data = data.fillna(df.select_dtypes(include = np.number).median())
+    # drop other 
+    data = data.dropna()    
+    return data 
 
 def clean_data(data : DataFrame) -> DataFrame:
     #handle missing
     df = handle_missing(data)
 
     # remove useless columns
-    to_drop = ['structureId', 'chainId', 'sequence', 'pdbxDetails']
+    to_drop = ['structureId', 'chainId', 'sequence', 'pdbxDetails', 'publicationYear']
 
     if 'sequence' in df.columns:
         df = df.drop(to_drop, axis=1)
@@ -92,21 +102,8 @@ def clean_data(data : DataFrame) -> DataFrame:
     df['classification'] = df['classification'].str.replace(', ', '/', regex=False)
     df['classification'] = df['classification'].str.replace('/ ', '/', regex=False)
     df['classification'] = df['classification'].str.replace(')', '', regex=False)
-    
-    #print(df.head())
-    return df
 
-def handle_missing(df:DataFrame)->DataFrame:
-    data = df.copy()
-    #macromoleculeType and crystallizationMethod replace by mode
-    data['macromoleculeType']     = data.macromoleculeType.fillna(data.macromoleculeType.mode()[0])
-    data['crystallizationMethod'] = data.crystallizationMethod.fillna(data.crystallizationMethod.mode()[0])
-    # for numerical values replace nan by median 
-    data = data.fillna(df.select_dtypes(include = np.number).median())
-    # drop other 
-    data = data.dropna()    
-    return data    
-    
+    return df
 
 def save(filePath, data):
     with open(filePath, 'wb') as f : 
