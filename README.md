@@ -4,7 +4,33 @@
 
 
 **README**
-
+ <center> <h3> NGIZULU Edi & DIALLO Sadou Safa </h3> <center>\n
+                
+        <center> <h3> Structural Protein Classification </h3> <center>\n
+    
+        <center> <h3> Formation continue DataScientiste Mai 2021 </h3> <center>\n
+                
+              \n
+              \n
+              <br>
+              <br>
+              
+        <center> <h2> Contexte </h2> <center>\n
+             > Le projet fil rouge clôturant notre formation continue de data scientiste chez Datascientest  porte sur  la __Structural Protein Classification__
+             ><br> <br>
+             > Le choix de ce projet qui est hors catalogue a été laborieux:
+                 <li> dans la compréhension du sujet et sa mise en oeuvre
+                 <li> dans l'interprétation des résultats 
+             > <br> <br>
+             > Néanmoins la volumétrie des données ainsi que les diverses catégories des variables nous ont permis de comprendre vers quels algorithmes de machine learning et de deep learning orienter  nos recherches et appliquer les connaissances acquises au cours de la formation.
+             > <br> <br>
+             > En effet, __quels intérêts pour la classification de la structure des proteines ?__
+             > __Les proteines__ sont des macromolécules complexes, elles sont les plus abondantes des molécules organiques des cellules et constituent à elles seules plus de 50% du poids\n à sec des êtres vivants. <br>
+             > <br> <br> 
+             > La prédiction de la structure des protéiques est une préoccupation majeure en bio-informatique, en biotechnologie et en médecine notamment dans la conception des enzymes et des nouveaux médicaments
+             > <br> <br> 
+             > Le projet communautaire [CAMEO3D](https://www.cameo3d.org/) évalue les performances continues des serveurs web dédiés à la prédiction de la structure des protéines  
+             > 
 ## Presentation
 
 This repository contains the code for our project **Structural Protein Classification**, developed during our [Data Scientist training](https://datascientest.com/en/data-scientist-course) at [DataScientest](https://datascientest.com/).
