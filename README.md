@@ -12,8 +12,8 @@ The goal of this project is to **predict the structure of proteins with Machine 
 
 This project was developed by the following team :
 
-- Edi __NGIZULU__ ([GitHub](https://github.com/) / [linkedin](www.linkedin.com/in/edi-ngizulu-57256316a)
-- Sadou Safa __DIALLO__ ([GitHub](https://github.com/) /[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)
+- Edi __NGIZULU__ ([GitHub](https://github.com/) / [linkedin](www.linkedin.com/in/edi-ngizulu-57256316a))
+- Sadou Safa __DIALLO__ ([GitHub](https://github.com/) /[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/))
 
 You can browse and run the [notebooks](./notebooks). You will need to install the dependencies (in a dedicated environment) :
 
