@@ -5,6 +5,7 @@ import scipy as sc
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy.stats import skew
+import itertools
 
 #Tuning 
 from sklearn.preprocessing import StandardScaler
@@ -92,13 +93,13 @@ def build_models(model, X_train,X_test, y_train, y_test) :
     return ret_dict
 
 
-def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,n_jobs=4, train_sizes=np.linspace(.1, 1.0, 5)):
+def plot_learning_curve(estimator, X, y, ylim=None, cv=None,n_jobs=4, train_sizes=np.linspace(.1, 1.0, 5)):
 
     plt.figure(figsize = (10,5))
-    plt.title(title)
+    plt.title(estimator.__class__.__name__ + 'learning curves')
     if ylim is not None:
         plt.ylim(*ylim)
-    plt.xlabel("Training examples")
+    plt.xlabel("Training samples")
     plt.ylabel("Score")
     train_sizes, train_scores, test_scores = learning_curve(
         estimator, X, y, cv=cv, n_jobs=n_jobs, train_sizes=train_sizes)
@@ -112,4 +113,30 @@ def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,n_jobs=4, tra
     plt.plot(train_sizes, test_scores_mean, 'o-', color="g",
              label="Cross-validation score")
     plt.legend(loc="best")
+    return plt.show()
+
+
+def plot_confusion_matrix(cm, classes,model_name):
+
+    plt.figure(figsize=(13,10))
+    cmap = plt.cm.Blues
+    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+    plt.title('Confusion matrix: '+ model_name, fontsize=15)
+    plt.colorbar()
+    tick_marks = np.arange(len(classes))
+    plt.xticks(tick_marks, classes, rotation=0)
+    plt.yticks(tick_marks, classes)
+    fmt = 'd'
+    thresh = cm.max() / 2.
+    for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+        plt.text(j, i, format(cm[i, j], fmt),
+                 horizontalalignment="center",
+                 color="white" if cm[i, j] > thresh else "black",fontsize=12)
+
+    plt.tight_layout()
+    plt.ylabel('True label',fontsize=16,color='black')
+    plt.xlabel('Predicted label',fontsize=16,color='black' )
+    plt.xticks(rotation = 90)
+    np.set_printoptions(precision=2)
+    
     return plt.show()
