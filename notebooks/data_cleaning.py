@@ -17,7 +17,6 @@ def load_datasets():
     # return merged data
     return df
 
-
 def map_experimentalTechique(data):
     expt = (data.value_counts(normalize=True))
     techniques={}
@@ -103,31 +102,17 @@ def show_missing(df):
 
 def handle_missing(df:DataFrame)->DataFrame:
     data = df.copy()
-    #macromoleculeType and crystallizationMethod replaced by mode
-    data['macromoleculeType']     = data.macromoleculeType.fillna(data.macromoleculeType.mode()[0])
-    data['crystallizationMethod'] = data.crystallizationMethod.fillna(data.crystallizationMethod.mode()[0])
+    # categorical values classification, macromoleculeType and crystallizationMethod replaced by mode
+    for i in ['classification', 'macromoleculeType', 'crystallizationMethod'] :
+        data[i] = data[i].fillna(data[i].mode()[0])
     # for numerical values replace nan by median 
     data = data.fillna(df.select_dtypes(include = np.number).median())
-    # drop other 
+    # drop anything else (useless)
     data = data.dropna()
-    return data.reset_index()
+    return data.reset_index(drop=True)
 
-def clean_data(data : DataFrame) -> DataFrame:
-    #handle missing
-    df = handle_missing(data)
-
-    # remove useless columns
-    to_drop = ['structureId', 'chainId', 'sequence', 'pdbxDetails', 'publicationYear']
-
-    if 'sequence' in df.columns:
-        df = df.drop(to_drop, axis=1)
-    
-    # analyse all variables separately
-    df['experimentalTechnique'] = map_experimentalTechique(df.experimentalTechnique)
-    df['crystallizationMethod'] = map_crystallizationMethod(df.crystallizationMethod)
-    df['macromoleculeType']     = map_macromoleculeType(df.macromoleculeType)
-    df['phValue']               = map_phValue(df.phValue)
-
+def reduce_modalities(df:DataFrame) -> DataFrame:
+    df = df.copy()
     df['classification'] = df['classification'].str.lower()
     df['classification'] = df['classification'].str.replace('(', '/', regex=False)
     df['classification'] = df['classification'].str.replace(',', '/', regex=False)
@@ -135,9 +120,34 @@ def clean_data(data : DataFrame) -> DataFrame:
     df['classification'] = df['classification'].str.replace('/ ', '/', regex=False)
     df['classification'] = df['classification'].str.replace(')', '', regex=False)
 
+    # analyse all variables separately
+    df['experimentalTechnique'] = map_experimentalTechique(df.experimentalTechnique)
+    df['crystallizationMethod'] = map_crystallizationMethod(df.crystallizationMethod)
+    df['macromoleculeType']     = map_macromoleculeType(df.macromoleculeType)
+    df['phValue']               = map_phValue(df.phValue)
+
     #df = filter_classification(df)
     df['classification'] = map_classification(df.classification)
     return df
+
+def clean_data(data : DataFrame) -> DataFrame:
+    # remove useless columns
+    to_drop = ['structureId', 'chainId', 'sequence', 'pdbxDetails', 'publicationYear']
+    df = data
+    for i in to_drop:
+        if i in df:
+            df = df.drop(i, axis = 1)
+    #handle missing
+    df = handle_missing(df)        
+    #reduce modalities by regrouping less important modalities of categorical values
+    df = reduce_modalities(df)
+    return df
+
+def load_and_clean_datasets():
+    df = load_datasets()
+    df = clean_data(df)
+    return df
+
 
 def save(filePath, data):
     with open(filePath, 'wb') as f : 
