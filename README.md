@@ -53,7 +53,7 @@ Le projet communautaire __[CAMEO3D](https://www.cameo3d.org/)__  évalue les per
 |**structureId**        | float64          | id de la strcuture                              |
 |**macromoleculeType**  | object           | Type de macromolécule (Protein,DNA, RNA)        |   
 
-#### Dataset sequence
+#### 2. Dataset sequence
 |Features               |    Types         |    Description              |
 |:----------------------|-----------------:|------------------------------------------------:|          
 |**residueCount**       | float64          | nombre d'acides aminés dans la séquence         |
