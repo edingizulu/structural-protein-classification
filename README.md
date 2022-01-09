@@ -23,13 +23,7 @@ Le projet communautaire __[CAMEO3D](https://www.cameo3d.org/)__  évalue les per
 > __[AlphaFold](https://en.wikipedia.org/wiki/AlphaFold)__  est une IA developpée par google pour la prédiction de la structure des proteines et cette application d'intélligence artificielle a notamment servi dans la prédiction de la structure des proteines du __SARS-COV-2__
   
 > _La prédiction  de la structure des protéines est l'inférence de la structure tridimensionnelle d'une protéine à partir de sa séquence d'acides aminés c'est-à-dire la prédiction de son pliage et de sa structure secondaire et tertiaire de sa structure primaire_ __[wikipedia](https://fr.wikipedia.org/wiki/Pr%C3%A9diction_de_la_structure_des_prot%C3%A9ines)__
-""", unsafe_allow_html=True)
 
-#image = Image.open('images/protein_folding_figure.png')
-
-#st.image(image, width=400,caption="Illustration de la prédiction de la structure Primaire d'une proteine")
-
-st.markdown("""
  ### II. Source des données  
 ---
 > Les données sont issues de la __[Protein Data Bank](https://www.rcsb.org/)__ (PDB). 
