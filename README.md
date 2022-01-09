@@ -63,3 +63,35 @@ Le projet communautaire __[CAMEO3D](https://www.cameo3d.org/)__  évalue les per
 |sequence               | object           | sequence de la proteine                         |
 
 >3 variables communes des 2 tables ont permis la fusion en une unique table. 
+
+## III. Nettoyage des données
+> Après la fusion des datasets, nous avons constaté un nombre non négligéable des
+données manquantes sur certaines variables. Ainsi pour garder un maximum des données,
+nous avons appliqué la stratégie de gestion des données manquantes suivante:
+- remplacement par la médiane des variables numériques
+- remplacement par la mode  des variables catégorielles
+
+> Nous avons supprimé les variables n'ayant aucun impact sur l'analyse des données :
+
+_pdbxDetails ----> diverses propriétés de la proteine sans impact sur l'analyse_
+
+_chainId     ----> id sans impact sur l'analyse des données_
+
+_structureId ----> id sans impact sur l'analyse des données_
+
+> Nous avons également supprimé la variable __sequence__ pour les algorithmes de Machine
+Learning; cette variable servira d'input feature dans le Deep Learning en deuxième
+partie de ce projet.
+
+Les variables quantitatives telles que _residueCount, structureMolecularWeight, densityMattews, resolution_ étaient fortement assymétriques, une correction logarithmique a été opérée.
+#### Target Feature
+> La variable classification est notre variable cible (target feature),
+elle comprend __4989 modalités !__ . 
+Ne pouvant pour des raisons pratiques faire la
+classification de toutes ces modalités, dans le modele final nous n'avons gardé que
+__les classes de fréquence supérieure à 5000 valeurs__ et avons regroupé les autres
+classes dans une modalité renommée __"other_classes"__. 
+
+Pour terminer toutes les données manquantes restantes ont été supprimées. 
+
+Cette stratégie nous a permis d'avoir un dataset final propre pour l'analyse des données avec les algorithmes ML et le Deep Learning.
