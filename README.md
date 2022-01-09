@@ -30,7 +30,9 @@ Le projet communautaire __[CAMEO3D](https://www.cameo3d.org/)__  évalue les per
  Il s'agit d'un ensemble de données extrait de la base du groupe d'experts du Research Collaboratory for Structural Bioinformatics.
  Dans cette base  sont stockées les coordonnées atomiques des proteines et des informations rélatives à d'autres macro-molécules.
  > Le dataset est composé des deux fichiers: 
+ > 
  **- protéine** : _regroupe toutes les variables décrivant la protéine_ 
+ 
  **- séquences :** _regroupe toutes les variables décrivant les séquences associées aux protéines_ 
  
  #### 1.  Dataset proteins
