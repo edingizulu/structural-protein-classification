@@ -92,6 +92,6 @@ classification de toutes ces modalités, dans le modele final nous n'avons gard�
 __les classes de fréquence supérieure à 5000 valeurs__ et avons regroupé les autres
 classes dans une modalité renommée __"other_classes"__. 
 
-Pour terminer toutes les données manquantes restantes ont été supprimées. 
+Pour terminer, toutes les données manquantes restantes ont été supprimées. 
 
-Cette stratégie nous a permis d'avoir un dataset final propre pour l'analyse des données avec les algorithmes ML et le Deep Learning.
+Cette stratégie nous a permis d'avoir un dataset final propre et prêt pour l'analyse des données avec les __algorithmes ML__ et le __Deep Learning__.
