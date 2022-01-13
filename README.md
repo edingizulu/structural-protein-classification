@@ -5,14 +5,14 @@
 ###  DS Formation continue  Mai 2021 ### 
 ------------------------------------
 ### I. Contexte du Projet ### 
- > Le projet fil rouge clôturant notre formation continue de data scientiste chez Datascientest  porte sur
- **_la Structural Protein Classification_**. Ce projet se fixe pour objectif la prédiction de la structure des proteines avec des algorithmes de __Machine Learning__ et de Deep __Learning__.
+ > Le projet fil rouge clôturant notre formation continue de data scientist chez Datascientest  porte sur
+ **_la Structural Protein Classification_**. Ce projet se fixe pour objectif la prédiction de la structure des proteines avec des algorithmes de __Machine Learning__ et de __Deep Learning__.
  Le choix de ce projet qui ne fait pas partie du catalogue de projets proposé par nos formateurs a été laborieux:
  - dans la compréhension du sujet 
  - sa mise en oeuvre 
  - son interprétation des résultats etc.
 
-> Néanmoins la volumétrie des données ainsi que les diverses catégories des variables nous ont permis de comprendre vers quels algorithmes de machine learning et de deep learning orienter  nos recherches et appliquer les connaissances acquises au cours de la formation.
+> Néanmoins la volumétrie des données ainsi que les diverses catégories des variables nous ont permis de comprendre vers quels algorithmes de machine learning et de deep learning orienter notre travail et appliquer les connaissances acquises au cours de la formation.
 
 #### Quels sont les intérêts pour la classification de la structure des protéines?
 
@@ -89,8 +89,7 @@ Les variables quantitatives telles que _residueCount, structureMolecularWeight, 
 elle comprend __4989 modalités !__ . 
 Ne pouvant pour des raisons pratiques faire la
 classification de toutes ces modalités, dans le modele final nous n'avons gardé que
-__les classes de fréquence supérieure à 5000 valeurs__ et avons regroupé les autres
-classes dans une modalité renommée __"other_classes"__. 
+__les classes de fréquence supérieure à 5000 valeurs__ 
 
 Pour terminer, toutes les données manquantes restantes ont été supprimées. 
 
