@@ -112,7 +112,7 @@ une fréquence supérieure à 5000 valeures.
 
 ![countplot_target](https://user-images.githubusercontent.com/35880186/149831302-42efc083-28c6-4df6-848f-ab69ae03d6cf.PNG)
 
-##### Technique d'extraction de la Proteine__
+##### Technique d'extraction de la Proteine
 ---
 > Avant de séquencer la proteine, son extraction s'obtient par plusieurs types de technique (32 techniques) dont la plus utilisée est la __X-RAY-DIFFRACTION__
 répresentant à elle seule __86 %__ des techniques utilisées dans la base, deux autres techniques s'ajoutent à celle-ci formant __99%__ des solutions techniques utilisées dans le dataset.
