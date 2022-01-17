@@ -141,3 +141,12 @@ cheval entre les deux prémières. Cette variable a été recodée en variable c
 
 >> _Comme attendu nous constatons plus de protéine dans le dataset final_
 
+##### Méthode de cristallisation
+--- 
+Nous avons dénombrés 418 techniques de cristallisation parmi lesquelles 4 à elles seules répresentent 94% du dataset total
+
+![methodes_crystallizations](https://user-images.githubusercontent.com/35880186/149836216-9c5a95e9-d8b7-44dd-8447-f969ab81b9b6.PNG)
+
+![count_crystalization_target](https://user-images.githubusercontent.com/35880186/149836141-d8ee744b-5ea8-44b2-b26f-49e567735292.PNG)
+
+>> _Les méthodes de vaportisations sont les plus répresentées dans le dataset final_ 
