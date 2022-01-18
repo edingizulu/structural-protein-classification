@@ -102,7 +102,7 @@ Pour terminer, toutes les données manquantes restantes ont été supprimées.
 
 Cette stratégie nous a permis d'avoir un dataset final propre et prêt pour l'analyse des données avec les __algorithmes ML__ et le __DL__.
 
-####  2. Analyse Exploratoire des données 
+####  3. Analyse Exploratoire des données 
 ---
  ##### Classification
 ---
