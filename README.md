@@ -1,9 +1,12 @@
+
+
+
+# Structural Protein Classification 
+
 ![protein_structure](https://user-images.githubusercontent.com/35880186/149831530-3020edf8-5c2b-446f-be2b-b9f16904abcc.jpeg)
 
-
-## Structural Protein Classification 
-
-### __NGIZULU__ Edi & __DIALLO__ Sadou Safa 
+### __NGIZULU__ Edi
+### __DIALLO__ Sadou Safa 
 -----------------------------------
 ###  DS Formation continue  Mai 2021 ### 
 ------------------------------------
