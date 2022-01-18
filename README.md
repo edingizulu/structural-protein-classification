@@ -156,3 +156,14 @@ Nous avons dénombrés 418 techniques de cristallisation parmi lesquelles 4 à e
 ![count_crystalization_target](https://user-images.githubusercontent.com/35880186/149836141-d8ee744b-5ea8-44b2-b26f-49e567735292.PNG)
 
 >> _Les méthodes de vaportisations sont les plus répresentées dans le dataset final_ 
+
+---
+ ##### Méthode de cristallisation
+--- 
+Nous avons dénombrés 418 techniques de cristallisation parmi lesquelles 4 à elles seules répresentent 94% du dataset total.
+
+![methodes_crystallizations](https://user-images.githubusercontent.com/35880186/150034550-db6e1bc2-a59c-4a3e-877a-ebc1b3d82d12.PNG)
+
+![count_crystalization_target](https://user-images.githubusercontent.com/35880186/150034501-65e9f097-0459-48aa-97be-7cdbb9cfc434.PNG)
+
+>> Les méthodes de vaporisation comptent pour 90% du dataset, le microbatch 3%. Les techniques de cristallisation par la vapeur sont comme attendues les plus fréquentes dans le dataset final. 
