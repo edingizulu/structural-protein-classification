@@ -180,7 +180,7 @@ hormis les classes __virus__, __ribosome__ et __ribosome/antibiotic__
 ---
 - #### structureMolecularWeight par classe de protéine ####
 ---
-> Nous avons fait aussi la comparaison des classes de protéine avec le poids de la structure moléculaire, si comme précédemment nous n'observons pas des différences particulières entre les classes,  les classes précédentes ressortent( __virus__, __ribosome__ et __ribosome/antibiotic__) montrant une corrélation entre ces deux variables sur ces 3 classes.
+> Nous avons fait aussi la comparaison des classes de protéine avec le poids de la structure moléculaire,  comme précédemment nous n'observons pas des différences particulières entre les classes,  les classes précédentes ressortent( __virus__, __ribosome__ et __ribosome/antibiotic__) montrant une corrélation entre ces deux variables sur ces 3 classes.
 ![box_macromolecule](https://user-images.githubusercontent.com/35880186/150309148-7f1ced98-6997-4828-a685-61a622f4fcd3.PNG)
 
 ---
