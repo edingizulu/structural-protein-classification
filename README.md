@@ -182,4 +182,10 @@ hormis les classes __virus__, __ribosome__ et __ribosome/antibiotic__
 > Nous avons fait aussi la comparaison des classes de protéine avec le poids de la structure moléculaire, si comme précédemment nous n'observons pas des différences particulières entre les classes,  les classes précédentes ressortent( __virus__, __ribosome__ et __ribosome/antibiotic__) montrant une corrélation entre ces deux variables sur ces 3 classes.
 ![box_macromolecule](https://user-images.githubusercontent.com/35880186/150309148-7f1ced98-6997-4828-a685-61a622f4fcd3.PNG)
 
+---
+ #### publicationYear par classe de protéine ####
+---
+> Cette variable bien qu'intervenant peu dans la prédiction de la structure des protéines nous renseigne sur l'intense activité de la communauté des chercheurs du RCB et 
+l'intérêt grandissant de la thématique des protéines depuis 2015 (année médiane)
 
+![box_publication](https://user-images.githubusercontent.com/35880186/150310358-6c7ffeaa-de25-4590-bc2d-2ddf4fdccd0b.PNG)
