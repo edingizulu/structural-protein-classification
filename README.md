@@ -107,16 +107,17 @@ Cette stratégie nous a permis d'avoir un dataset final propre et prêt pour l'a
 
 ####  3. Analyse Exploratoire des données 
 ---
- ##### Classification
+ - ##### Classification
 ---
 La variable classification est notre variable cible, elle comprend 4989 modalités. Nous avons restreint les classes à prédire à 17 correspondant aux classes ayant 
 une fréquence supérieure à 5000 valeures.
 ![target_50_most](https://user-images.githubusercontent.com/35880186/149831023-617bbf5a-ec54-495b-b8a5-3a22a5c8b24f.PNG)
 
-![countplot_target](https://user-images.githubusercontent.com/35880186/149831302-42efc083-28c6-4df6-848f-ab69ae03d6cf.PNG)
+![countplot_target](https://user-images.githubusercontent.com/35880186/150330112-f8bdf880-675f-4610-8183-c8fbf9cb8732.PNG)
+
 
 ---
-##### Technique d'extraction de la Proteine
+- ##### Technique d'extraction de la Proteine
 ---
 > Avant de séquencer la proteine, son extraction s'obtient par plusieurs types de technique (32 techniques) dont la plus utilisée est la __X-RAY-DIFFRACTION__
 répresentant à elle seule __86 %__ des techniques utilisées dans la base, deux autres techniques s'ajoutent à celle-ci formant __99%__ des solutions techniques utilisées dans le dataset.
@@ -126,7 +127,7 @@ Cette étape est importante car elle permet d'obtenir la séquence de la protein
 
 ![pie_technique_protein_extraction](https://user-images.githubusercontent.com/35880186/149831861-43c30cc6-56d1-4ab7-b92d-27e3eaab2798.png)
 ---
- ##### Valeur du Ph
+ - ##### Valeur du Ph
 ---
 > Les liaisons protéiques peuvent être changées voire disloquées par des agents de dénaturation tels que le PH (potentiel hydrogène). Globalement les protéines de la base sont plus neutres que basiques(supérieur à 7 ). Leur acidité(inférieur à 7) étant à 
 cheval entre les deux prémières. Cette variable a été recodée en variable catégorielle. 
@@ -138,7 +139,7 @@ cheval entre les deux prémières. Cette variable a été recodée en variable c
 >> _Nous n'observons pas de tendance dans la distribution des classes de proteine selon les valeurs du PH à part la classe __ribosome__ qui ressort beaucoup plus neutre, __l'hydrolase__ plus acidulé_
 >>
 ---
- ##### Type de Macromolécule
+ - ##### Type de Macromolécule
 ---
 > Nous avons environ **80%** du dataset qui est composé de protéine, 18% composé de protéines avec ARN ou ADN. Nous avons fait le choix de garder ces 3 modalités. 
 > 
@@ -147,7 +148,7 @@ cheval entre les deux prémières. Cette variable a été recodée en variable c
 >> _Comme attendu nous constatons plus de protéine dans le dataset final_
 >> 
 ---
-##### Méthode de cristallisation
+- ##### Méthode de cristallisation
 --- 
 Nous avons dénombrés 418 techniques de cristallisation parmi lesquelles 4 à elles seules répresentent 94% du dataset total
 
@@ -158,7 +159,7 @@ Nous avons dénombrés 418 techniques de cristallisation parmi lesquelles 4 à e
 >> _Les méthodes de vaportisations sont les plus répresentées dans le dataset final_ 
 
 ---
- ##### Méthode de cristallisation
+- ##### Méthode de cristallisation
 --- 
 Nous avons dénombrés 418 techniques de cristallisation parmi lesquelles 4 à elles seules répresentent 94% du dataset total.
 
@@ -169,7 +170,7 @@ Nous avons dénombrés 418 techniques de cristallisation parmi lesquelles 4 à e
 >> Les méthodes de vaporisation comptent pour 90% du dataset, le microbatch 3%. Les techniques de cristallisation par la vapeur sont comme attendues les plus fréquentes dans le dataset final. 
 
 ---
-#### residueCount par classe de protéine
+- #### residueCount par classe de protéine
 ---
 > Nous avons comparé les 17 classes de protéine selon le nombre d'acides aminés (feature residueCount), nous n'observons pas des différences particulières entre les classes 
 hormis les classes __virus__, __ribosome__ et __ribosome/antibiotic__
@@ -177,13 +178,13 @@ hormis les classes __virus__, __ribosome__ et __ribosome/antibiotic__
 ![box_residuecount](https://user-images.githubusercontent.com/35880186/150307855-4d06370e-e7f2-4dee-9035-4cc229d9ec2c.PNG)
 
 ---
-#### structureMolecularWeight par classe de protéine ####
+- #### structureMolecularWeight par classe de protéine ####
 ---
 > Nous avons fait aussi la comparaison des classes de protéine avec le poids de la structure moléculaire, si comme précédemment nous n'observons pas des différences particulières entre les classes,  les classes précédentes ressortent( __virus__, __ribosome__ et __ribosome/antibiotic__) montrant une corrélation entre ces deux variables sur ces 3 classes.
 ![box_macromolecule](https://user-images.githubusercontent.com/35880186/150309148-7f1ced98-6997-4828-a685-61a622f4fcd3.PNG)
 
 ---
- #### publicationYear par classe de protéine ####
+ - #### publicationYear par classe de protéine ####
 ---
 > Cette variable bien qu'intervenant peu dans la prédiction de la structure des protéines nous renseigne sur l'intense activité de la communauté des chercheurs du RCB et 
 l'intérêt grandissant de la thématique des protéines depuis 2015 (année médiane)
