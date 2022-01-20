@@ -167,3 +167,19 @@ Nous avons dénombrés 418 techniques de cristallisation parmi lesquelles 4 à e
 ![count_crystalization_target](https://user-images.githubusercontent.com/35880186/150034501-65e9f097-0459-48aa-97be-7cdbb9cfc434.PNG)
 
 >> Les méthodes de vaporisation comptent pour 90% du dataset, le microbatch 3%. Les techniques de cristallisation par la vapeur sont comme attendues les plus fréquentes dans le dataset final. 
+
+---
+#### residueCount par classe de protéine
+---
+> Nous avons comparé les 17 classes de protéine selon le nombre d'acides aminés (feature residueCount), nous n'observons pas des différences particulières entre les classes 
+hormis les classes __virus__, __ribosome__ et __ribosome/antibiotic__
+
+![box_residuecount](https://user-images.githubusercontent.com/35880186/150307855-4d06370e-e7f2-4dee-9035-4cc229d9ec2c.PNG)
+
+---
+#### structureMolecularWeight par classe de protéine ####
+---
+> Nous avons fait aussi la comparaison des classes de protéine avec le poids de la structure moléculaire, si comme précédemment nous n'observons pas des différences particulières entre les classes,  les classes précédentes ressortent( __virus__, __ribosome__ et __ribosome/antibiotic__) montrant une corrélation entre ces deux variables sur ces 3 classes.
+![box_macromolecule](https://user-images.githubusercontent.com/35880186/150309148-7f1ced98-6997-4828-a685-61a622f4fcd3.PNG)
+
+
