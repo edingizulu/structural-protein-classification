@@ -200,4 +200,5 @@ l'intérêt grandissant de la thématique des protéines depuis 2015 (année mé
 ![histplot_seq_freq](https://user-images.githubusercontent.com/35880186/151719520-77c9fa26-4c51-483b-bff0-91b61288f2f2.png)
 
 >> Les lettres __G__ et __A__ sont les fréquentes.
+
 ![seq_frequences_barplot](https://user-images.githubusercontent.com/35880186/151719278-89e8faf8-759f-4aa8-bc52-ac6bce7c493c.png)
