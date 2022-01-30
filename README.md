@@ -190,3 +190,14 @@ hormis les classes __virus__, __ribosome__ et __ribosome/antibiotic__
 l'intérêt grandissant de la thématique des protéines depuis 2015 (année médiane)
 
 ![box_publication](https://user-images.githubusercontent.com/35880186/150310358-6c7ffeaa-de25-4590-bc2d-2ddf4fdccd0b.PNG)
+
+----
+- #### Sequence Feature
+---
+> Notre objectif en deuxième partie de ce projet étant le deep learning, la variable sequence sera utilisée comme seule variable explicative; elle est composée de 25 lettres de 
+> longueur différente 
+> 
+![histplot_seq_freq](https://user-images.githubusercontent.com/35880186/151719520-77c9fa26-4c51-483b-bff0-91b61288f2f2.png)
+
+>> Les lettres __G__ et __A__ sont les fréquentes.
+![seq_frequences_barplot](https://user-images.githubusercontent.com/35880186/151719278-89e8faf8-759f-4aa8-bc52-ac6bce7c493c.png)
