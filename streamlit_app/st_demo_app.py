@@ -9,11 +9,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 im = Image.open("icon.png")
-st.set_page_config(
-    page_title='Protein Classification Project',
-    page_icon=im,
-    layout="centered",  # wide,
-    initial_sidebar_state="auto")
+# st.set_page_config(
+#     page_title='Protein Classification Project',
+#     page_icon=im,
+#     layout="centered",  # wide,
+#     initial_sidebar_state="auto")
 
 header = st.container()
 description = st.container()

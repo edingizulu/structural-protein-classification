@@ -20,14 +20,16 @@ import plotly.graph_objects as go
 import streamlit as st
 import streamlit.components.v1 as stc
 
-im = Image.open("Images/icon.png")
-st.set_page_config(
-    page_title='Protein Classification Project',
-    page_icon=im,
-    layout="centered",  # wide,
-    initial_sidebar_state="auto")
+IMG_DIR = '../images/'
 
-img = Image.open('Images/sequence_p.png')
+im = Image.open(IMG_DIR + "icon.png")
+# st.set_page_config(
+#     page_title='Protein Classification Project',
+#     page_icon=im,
+#     layout="centered",  # wide,
+#     initial_sidebar_state="auto")
+
+img = Image.open(IMG_DIR + 'sequence_p.png')
 
 HTML_BANNER = """
     <div style="background-color:#464e5f;padding:10px;border-radius:10px">
@@ -39,8 +41,8 @@ header = st.container()
 description = st.container()
 
 # Chargement des fichiers de data
-df_prot = pd.read_csv('../dataset/data_no_dup.csv')
-df_seq = pd.read_csv('../dataset/data_seq.csv')
+df_prot = pd.read_csv('../data/data_no_dups.csv')
+df_seq = pd.read_csv('../data/data_seq.csv')
 df = pd.merge(df_prot, df_seq, on=['structureId', 'macromoleculeType', 'residueCount'], how='inner')
 
 
@@ -130,7 +132,7 @@ def dataset():
         with st.container():
             st.warning(
                 "Il est important de comprendre la signification de chaque variable fournie dans le dataset")
-            df_feat = pd.read_csv('../dataset/features_description.csv', sep=';', index_col=0)
+            df_feat = pd.read_csv('../data/features_description.csv', sep=';', index_col=0)
 
             st.table(df_feat.dropna())
         # st.subheader("__Analyse des Résultats__")
@@ -294,7 +296,7 @@ if __name__ == "__main__":
                     'Conclusion']
     # st.sidebar.image('protein-structure-title-image.jpeg', use_column_width=True)
 
-    st.sidebar.image('Images/proteins.png', use_column_width=True)
+    st.sidebar.image(IMG_DIR+'proteins.png', use_column_width=True)
     action = st.sidebar.radio("", side_actions, index=0)
     actions_functions = [presentation, dataset, eda, feat_selection, visualisation, modelisation, interpretation]
     actions_functions[side_actions.index(action)]()
