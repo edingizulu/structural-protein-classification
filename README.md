@@ -202,3 +202,30 @@ l'intérêt grandissant de la thématique des protéines depuis 2015 (année mé
 >> Les lettres __G__ et __A__ sont les fréquentes.
 
 ![seq_frequences_barplot](https://user-images.githubusercontent.com/35880186/151719278-89e8faf8-759f-4aa8-bc52-ac6bce7c493c.png)
+
+---
+## II. Modélisation 
+---
+> Le but de notre projet comme rappelé précédemment est la prédiction de la structure des protéines. Nous avons choisi d'utiliser les algorithmes de ML et DL, pour ce faire, nous avons abordé les étapes ci-dessous qui nous ont permis de modéliser les données et obtenir un dataset final propre et adapté à l'entrainement des différents modèles.
+### 1. Préprocessing des données:
+---
+> L'exploration et la phase d'analyse terminées, nous avons nettoyé  et préparé le jeu de données pour l'apprentissage. 
+Cette étape nous a permis:
+  - d'identifier les variables non indispensables dans le dataset final, variables que nous avons supprimées
+  - de gérer les données manquantes en les remplaçant par la médiane pour les variables numériques, la mode pour les variables catégorielles et supprimer les lignes des variables pour lesquelles les données étaient manquantes.
+  - de réduire les modalités de certaines variables en les régroupant selon le nombre d'observation dans une nouvelle modalité.
+  - de définir une stratégie de réduction des classes de protéines à prédire en les ramènant à 17 classes au lieu de 4989  en ne tenant compte que des modalités ayant plus de 5000 observations. Nous avons ainsi gardé 64% des classes protéiques dans le dataset final. 
+  - de discrétiser les variables catégorielles à plusieurs modalités. 
+  - Nous avons procédé par élimination récursive des variables (RFE) selon leur poids en utilisant l'algorithme des forêts aléatoires en ne gardant 8 variables dans le dataset final. 
+>> Les diverses étapes listées ci-dessus nous ont permis d'avoir un jeu données final de __310.000 lignes__ (__68%__ du dataset initial) et __8 features__ 
+
+### 2. Métriques des tests 
+
+> Nous avons utilisé les métriques suivantes pour la classification de la structure protéique:
+>> __Accuracy:__ cette métrique nous a permis d'obtenir rapidement la performance de nos modèles 
+>> 
+>> __Rapport de classification:__ les performances fines sur chaque classe protéique ont été obtenues avec cette métrique 
+>> 
+>> __Matrices de confusion__: en détails, cette métrique nous a permis de comprendre les classifications correctes et incorrectes de nos modèles. 
+
+
