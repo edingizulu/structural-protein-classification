@@ -5,13 +5,38 @@
 
 ![protein_structure](https://user-images.githubusercontent.com/35880186/149831530-3020edf8-5c2b-446f-be2b-b9f16904abcc.jpeg)
 
-### __NGIZULU__ Edi       _[linkedin](www.linkedin.com/in/edi-ngizulu-57256316a)_
-### __DIALLO__ Sadou Safa  _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
+### __NGIZULU__ Edi      
+_[linkedin](www.linkedin.com/in/edi-ngizulu-57256316a)_
+### __DIALLO__ Sadou Safa  
+_[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
 
 -----------------------------------
 ###  DS Formation continue  Mai 2021 ### 
 ------------------------------------
-###  Contexte du Projet ### 
+
+### Sommaire
+[Contexte du projet](#contexte)
+
+I. [Analyse des données](#analyse)
+   1. [Source des données](#source)
+   2. [Nettoyage des données](#nettoyage)
+   3. [Analyse Exploratoire des données ](#eda)
+   
+       - [Classification](#target)
+       - [Technique d'extraction de la Proteine](#technique)
+       - [PH Value](#ph)
+       - [macromoleculeType](#macro)
+       - [methodes_crystallizations](#cristal)
+       - [residueCount](#residue)
+       - [structureMolecularWeight](#weight)
+       - [publicationYear](#pub)
+       - [Sequence Feature](#seq)
+       
+II. [Modélisation](#modelisation)
+   1. [Preprocessing](#preprocessing)
+   2. [Métriques des tests](#metric)
+
+###  Contexte du Projet  <a name="contexte"></a>
  > Le projet fil rouge clôturant notre formation continue de data scientiste chez Datascientest  porte sur
  **_la Structural Protein Classification_**. Ce projet se fixe pour objectif la prédiction de la structure des proteines avec des algorithmes de __Machine Learning__ et de Deep __Learning__.
  Le choix de ce projet qui ne fait pas partie du catalogue de projets proposé par nos formateurs a été laborieux:
@@ -31,9 +56,9 @@ Le projet communautaire __[CAMEO3D](https://www.cameo3d.org/)__  évalue les per
   
 > _La prédiction  de la structure des protéines est l'inférence de la structure tridimensionnelle d'une protéine à partir de sa séquence d'acides aminés c'est-à-dire la prédiction de son pliage et de sa structure secondaire et tertiaire de sa structure primaire_ __[wikipedia](https://fr.wikipedia.org/wiki/Pr%C3%A9diction_de_la_structure_des_prot%C3%A9ines)__
 
- ### I. ANALYSE DES DONNEES 
+ ### I. ANALYSE DES DONNEES <a name="analyse"></a>
    ---
-### 1. Source de données  
+### 1. Source des données  <a name="source"></a>
 ---
 > Les données sont issues de la __[Protein Data Bank](https://www.rcsb.org/)__ (PDB). 
  Il s'agit d'un ensemble de données extrait de la base du groupe d'experts du Research Collaboratory for Structural Bioinformatics.
@@ -74,7 +99,7 @@ Le projet communautaire __[CAMEO3D](https://www.cameo3d.org/)__  évalue les per
 
 >3 variables communes des 2 tables ont permis la fusion en un tableau unique  
  ---
-  ####  2.  Nettoyage des données
+  ####  2.  Nettoyage des données   <a name="nettoyage"></a>
  ---
 > Après la fusion des datasets, nous avons constaté un nombre non négligéable des
 données manquantes sur certaines variables. Ainsi pour garder un maximum des données,
@@ -106,9 +131,9 @@ Pour terminer, toutes les données manquantes restantes ont été supprimées.
 
 Cette stratégie nous a permis d'avoir un dataset final propre et prêt pour l'analyse des données avec les __algorithmes ML__ et le __DL__.
 
-####  3. Analyse Exploratoire des données 
+####  3. Analyse Exploratoire des données <a name="eda"></a>
 ---
- - ##### Classification
+ - ##### Classification <a name="target"></a>
 ---
 La variable classification est notre variable cible, elle comprend 4989 modalités. Nous avons restreint les classes à prédire à 17 correspondant aux classes ayant 
 une fréquence supérieure à 5000 valeures.
@@ -118,7 +143,7 @@ une fréquence supérieure à 5000 valeures.
 
 
 ---
-- ##### Technique d'extraction de la Proteine
+- ##### Technique d'extraction de la Proteine <a name="technique"></a>
 ---
 > Avant de séquencer la proteine, son extraction s'obtient par plusieurs types de technique (32 techniques) dont la plus utilisée est la __X-RAY-DIFFRACTION__
 répresentant à elle seule __86 %__ des techniques utilisées dans la base, deux autres techniques s'ajoutent à celle-ci formant __99%__ des solutions techniques utilisées dans le dataset.
@@ -128,7 +153,7 @@ Cette étape est importante car elle permet d'obtenir la séquence de la protein
 
 ![pie_technique_protein_extraction](https://user-images.githubusercontent.com/35880186/149831861-43c30cc6-56d1-4ab7-b92d-27e3eaab2798.png)
 ---
- - ##### Valeur du Ph
+ - ##### Valeur du Ph <a name="ph"></a>
 ---
 > Les liaisons protéiques peuvent être changées voire disloquées par des agents de dénaturation tels que le PH (potentiel hydrogène). Globalement les protéines de la base sont plus neutres que basiques(supérieur à 7 ). Leur acidité(inférieur à 7) étant à 
 cheval entre les deux prémières. Cette variable a été recodée en variable catégorielle. 
@@ -140,7 +165,7 @@ cheval entre les deux prémières. Cette variable a été recodée en variable c
 >> _Nous n'observons pas de tendance dans la distribution des classes de proteine selon les valeurs du PH à part la classe __ribosome__ qui ressort beaucoup plus neutre, __l'hydrolase__ plus acidulé_
 >>
 ---
- - ##### Type de Macromolécule
+ - ##### Type de Macromolécule <a name = "macro"></a>
 ---
 > Nous avons environ **80%** du dataset qui est composé de protéine, 18% composé de protéines avec ARN ou ADN. Nous avons fait le choix de garder ces 3 modalités. 
 > 
@@ -149,7 +174,7 @@ cheval entre les deux prémières. Cette variable a été recodée en variable c
 >> _Comme attendu nous constatons plus de protéine dans le dataset final_
 >> 
 ---
-- ##### Méthode de cristallisation
+- ##### Méthode de cristallisation <a name = "cristal"></a>
 --- 
 Nous avons dénombrés 418 techniques de cristallisation parmi lesquelles 4 à elles seules répresentent 94% du dataset total
 
@@ -157,21 +182,10 @@ Nous avons dénombrés 418 techniques de cristallisation parmi lesquelles 4 à e
 
 ![count_crystalization_target](https://user-images.githubusercontent.com/35880186/149836141-d8ee744b-5ea8-44b2-b26f-49e567735292.PNG)
 
->> _Les méthodes de vaportisations sont les plus répresentées dans le dataset final_ 
+>>  Les méthodes de vaporisation comptent pour 90% du dataset, le microbatch 3%. Les techniques de cristallisation par la vapeur sont comme attendues les plus fréquentes dans le dataset final. 
 
 ---
-- ##### Méthode de cristallisation
---- 
-Nous avons dénombrés 418 techniques de cristallisation parmi lesquelles 4 à elles seules répresentent 94% du dataset total.
-
-![methodes_crystallizations](https://user-images.githubusercontent.com/35880186/150034550-db6e1bc2-a59c-4a3e-877a-ebc1b3d82d12.PNG)
-
-![count_crystalization_target](https://user-images.githubusercontent.com/35880186/150034501-65e9f097-0459-48aa-97be-7cdbb9cfc434.PNG)
-
->> Les méthodes de vaporisation comptent pour 90% du dataset, le microbatch 3%. Les techniques de cristallisation par la vapeur sont comme attendues les plus fréquentes dans le dataset final. 
-
----
-- #### residueCount par classe de protéine
+- #### residueCount par classe de protéine <a name = "residue"></a>
 ---
 > Nous avons comparé les 17 classes de protéine selon le nombre d'acides aminés (feature residueCount), nous n'observons pas des différences particulières entre les classes 
 hormis les classes __virus__, __ribosome__ et __ribosome/antibiotic__
@@ -179,13 +193,13 @@ hormis les classes __virus__, __ribosome__ et __ribosome/antibiotic__
 ![box_residuecount](https://user-images.githubusercontent.com/35880186/150307855-4d06370e-e7f2-4dee-9035-4cc229d9ec2c.PNG)
 
 ---
-- #### structureMolecularWeight par classe de protéine ####
+- #### structureMolecularWeight par classe de protéine<a name = "weight"></a>
 ---
 > Nous avons fait aussi la comparaison des classes de protéine avec le poids de la structure moléculaire,  comme précédemment nous n'observons pas des différences particulières entre les classes,  les classes précédentes ressortent( __virus__, __ribosome__ et __ribosome/antibiotic__) montrant une corrélation entre ces deux variables sur ces 3 classes.
 ![box_macromolecule](https://user-images.githubusercontent.com/35880186/150309148-7f1ced98-6997-4828-a685-61a622f4fcd3.PNG)
 
 ---
- - #### publicationYear par classe de protéine ####
+ - #### publicationYear par classe de protéine <a name="pub"></a>
 ---
 > Cette variable bien qu'intervenant peu dans la prédiction de la structure des protéines nous renseigne sur l'intense activité de la communauté des chercheurs du RCB et 
 l'intérêt grandissant de la thématique des protéines depuis 2015 (année médiane)
@@ -193,7 +207,7 @@ l'intérêt grandissant de la thématique des protéines depuis 2015 (année mé
 ![box_publication](https://user-images.githubusercontent.com/35880186/150310358-6c7ffeaa-de25-4590-bc2d-2ddf4fdccd0b.PNG)
 
 ----
-- #### Sequence Feature
+- #### Sequence Feature <a name="seq"></a>
 ---
 > Notre objectif en deuxième partie de ce projet étant le deep learning, la variable sequence sera utilisée comme seule variable explicative; elle est composée de 25 lettres de 
 > longueur différente 
@@ -205,10 +219,10 @@ l'intérêt grandissant de la thématique des protéines depuis 2015 (année mé
 ![seq_frequences_barplot](https://user-images.githubusercontent.com/35880186/151719278-89e8faf8-759f-4aa8-bc52-ac6bce7c493c.png)
 
 ---
-## II. Modélisation 
+## II. Modélisation <a name ="modelisation"></a>
 ---
 > Le but de notre projet comme rappelé précédemment est la prédiction de la structure des protéines. Nous avons choisi d'utiliser les algorithmes de ML et DL, pour ce faire, nous avons abordé les étapes ci-dessous qui nous ont permis de modéliser les données et obtenir un dataset final propre et adapté à l'entrainement des différents modèles.
-### 1. Préprocessing des données:
+### 1. Preprocessing des données:  <a name ="preprocessing"></a>
 ---
 > L'exploration et la phase d'analyse terminées, nous avons nettoyé  et préparé le jeu de données pour l'apprentissage. 
 Cette étape nous a permis:
@@ -220,7 +234,7 @@ Cette étape nous a permis:
   - Nous avons procédé par élimination récursive des variables (RFE) selon leur poids en utilisant l'algorithme des forêts aléatoires en ne gardant que 8 variables dans le dataset final. 
 >> Les diverses étapes listées ci-dessus nous ont permis d'avoir un jeu données final de __310.000 lignes__ (__68%__ du dataset initial) et __8 features__ 
 
-### 2. Métriques des tests 
+### 2. Métriques des tests <a name ="metric"></a>
 
 > Nous avons utilisé les métriques suivantes pour la classification de la structure protéique:
 >> __Accuracy:__ cette métrique nous a permis d'obtenir rapidement la performance de nos modèles 
