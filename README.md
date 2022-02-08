@@ -5,8 +5,8 @@
 
 ![protein_structure](https://user-images.githubusercontent.com/35880186/149831530-3020edf8-5c2b-446f-be2b-b9f16904abcc.jpeg)
 
-### __NGIZULU__ Edi       [linkedin](www.linkedin.com/in/edi-ngizulu-57256316a)
-### __DIALLO__ Sadou Safa [linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)
+### __NGIZULU__ Edi       _[linkedin](www.linkedin.com/in/edi-ngizulu-57256316a)_
+### __DIALLO__ Sadou Safa  _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
 
 -----------------------------------
 ###  DS Formation continue  Mai 2021 ### 
