@@ -216,7 +216,7 @@ Cette étape nous a permis:
   - de réduire les modalités de certaines variables en les régroupant selon le nombre d'observation dans une nouvelle modalité.
   - de définir une stratégie de réduction des classes de protéines à prédire en les ramènant à 17 classes au lieu de 4989  en ne tenant compte que des modalités ayant plus de 5000 observations. Nous avons ainsi gardé 64% des classes protéiques dans le dataset final. 
   - de discrétiser les variables catégorielles à plusieurs modalités. 
-  - Nous avons procédé par élimination récursive des variables (RFE) selon leur poids en utilisant l'algorithme des forêts aléatoires en ne gardant 8 variables dans le dataset final. 
+  - Nous avons procédé par élimination récursive des variables (RFE) selon leur poids en utilisant l'algorithme des forêts aléatoires en ne gardant que 8 variables dans le dataset final. 
 >> Les diverses étapes listées ci-dessus nous ont permis d'avoir un jeu données final de __310.000 lignes__ (__68%__ du dataset initial) et __8 features__ 
 
 ### 2. Métriques des tests 
@@ -226,6 +226,6 @@ Cette étape nous a permis:
 >> 
 >> __Rapport de classification:__ les performances fines sur chaque classe protéique ont été obtenues avec cette métrique 
 >> 
->> __Matrices de confusion__: en détails, cette métrique nous a permis de comprendre les classifications correctes et incorrectes de nos modèles. 
+>> __Matrices de confusion__: en détails, cette métrique nous a permis de comprendre les classifications correctes et incorrectes de des modèles. 
 
 
