@@ -4,14 +4,14 @@
 # Structural Protein Classification 
 
 ![protein_structure](https://user-images.githubusercontent.com/35880186/149831530-3020edf8-5c2b-446f-be2b-b9f16904abcc.jpeg)
-
+---
 ### __NGIZULU__ Edi      
 _[linkedin](www.linkedin.com/in/edi-ngizulu-57256316a)_
 ### __DIALLO__ Sadou Safa  
 _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
 
 -----------------------------------
-###  DS Formation continue  Mai 2021 ### 
+###  DS Formation continue  Mai 2021 
 ------------------------------------
 
 ### Sommaire
@@ -35,8 +35,9 @@ I. [Analyse des données](#analyse)
 II. [Modélisation](#modelisation)
    1. [Preprocessing](#preprocessing)
    2. [Métriques des tests](#metric)
-
+---
 ###  Contexte du Projet  <a name="contexte"></a>
+---
  > Le projet fil rouge clôturant notre formation continue de data scientiste chez Datascientest  porte sur
  **_la Structural Protein Classification_**. Ce projet se fixe pour objectif la prédiction de la structure des proteines avec des algorithmes de __Machine Learning__ et de Deep __Learning__.
  Le choix de ce projet qui ne fait pas partie du catalogue de projets proposé par nos formateurs a été laborieux:
