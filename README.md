@@ -255,7 +255,7 @@ Cette étape nous a permis:
 > Nous avons utilisé la librairie _lazypredict_ pour gérer le choix difficile de la pléthore des algorithmes de classification existant. En effet, cette bibliothèque par sa simplicité d'utilisation avec peu de codes et sans réglage des hyperparamètres nous a permis de faire le choix des meilleurs modèles à retenir, modèles auxquels seront appliqués des paramètres d'optimisations par la suite. 
 ---
 > -  #### 3.1 Itération 1 <a name = "iteration1"></a>
-> Nous n'avons pas eu à choisir les modèles, le choix a été opéré automatiquement par le package avec des métriques de performance des différents de chaque modèle en ordre décroissant. 
+> Nous n'avons pas eu à choisir les modèles, le choix a été opéré automatiquement par le package avec des métriques de performance des différents modèles en ordre décroissant. 
 ![Lazy_train_score](https://user-images.githubusercontent.com/35880186/153007082-c415c98a-4ed9-4dae-ba29-dd3d719fdfcd.PNG)
 >> Les algorithmes classiques de classification (regression logistique, SGDClassifier, lassoClassifier...) se sont montrés peu performants au contraire des algorithmes d'ensemble qui avec un temps d'entrainement rélativement courts affichent des métriques élèvées. 
 >> Sur les 25 modèles testés 4 se sont montrés particulièment performants et seront utilisés en troisième itération avec des paramètres d'optimisation adaptés. 
