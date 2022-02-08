@@ -17,7 +17,7 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
 ### Sommaire
 [Contexte du projet](#contexte)
 
-I. [Analyse des données](#analyse)
+#### I. [Analyse des données](#analyse)
    1. [Source des données](#source)
    2. [Nettoyage des données](#nettoyage)
    3. [Analyse Exploratoire des données ](#eda)
@@ -32,7 +32,7 @@ I. [Analyse des données](#analyse)
        - [publicationYear](#pub)
        - [Sequence Feature](#seq)
        
-II. [Modélisation](#modelisation)
+#### II. [Modélisation](#modelisation)
    1. [Preprocessing](#preprocessing)
    2. [Métriques des tests](#metric)
    3.  [Itération des Modèles](#iteration)
