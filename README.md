@@ -35,6 +35,12 @@ I. [Analyse des données](#analyse)
 II. [Modélisation](#modelisation)
    1. [Preprocessing](#preprocessing)
    2. [Métriques des tests](#metric)
+   3.  [Itération des Modèles](#iteration)
+   
+       3.1 [Itération 1: Lazypredict()](#iteration1)
+      
+       3.2 [Itération 2: Performances prédictives](#iteration2)
+    
 ---
 ###  Contexte du Projet  <a name="contexte"></a>
 ---
@@ -236,7 +242,7 @@ Cette étape nous a permis:
 >> Les diverses étapes listées ci-dessus nous ont permis d'avoir un jeu données final de __310.000 lignes__ (__68%__ du dataset initial) et __8 features__ 
 
 ### 2. Métriques des tests <a name ="metric"></a>
-
+---
 > Nous avons utilisé les métriques suivantes pour la classification de la structure protéique:
 >> __Accuracy:__ cette métrique nous a permis d'obtenir rapidement la performance de nos modèles 
 >> 
@@ -244,4 +250,18 @@ Cette étape nous a permis:
 >> 
 >> __Matrices de confusion__: en détails, cette métrique nous a permis de comprendre les classifications correctes et incorrectes de des modèles. 
 
+### 3. Itération des Modèles <a name = "iteration"></a>
+---
+> Nous avons utilisé la librairie _lazypredict_ pour gérer le choix difficile de la pléthore des algorithmes de classification existant. En effet, cette bibliothèque par sa simplicité d'utilisation avec peu de codes et sans réglage des hyperparamètres nous a permis de faire le choix des meilleurs modèles à retenir, modèles auxquels seront appliqués des paramètres d'optimisations par la suite. 
+> -  #### 3.1 Itération 1 <a name = "iteration1"></a>
+> Nous n'avons pas eu à choisir les modèles, le choix a été opéré automatiquement par le package avec des métriques de performance des différents de chaque modèle en ordre décroissant. 
+![Lazy_train_score](https://user-images.githubusercontent.com/35880186/153007082-c415c98a-4ed9-4dae-ba29-dd3d719fdfcd.PNG)
+>> Les algorithmes classiques de classification (regression logistique, SGDClassifier, lassoClassifier...) se sont montrés peu performants au contraire des algorithmes d'ensemble qui avec un temps d'entrainement rélativement courts affichent des métriques élèvées. 
+>> Sur les 25 modèles testés 4 se sont montrés particulièment performants et seront utilisés en troisième itération avec des paramètres d'optimisation adaptés. 
+![Lazy_train_score_graph](https://user-images.githubusercontent.com/35880186/153006627-d04a825c-880f-4b18-9702-8779065b5ceb.PNG)
+
+> -  #### 3.2 Itération 2: Performances prédictives <a name = "iteration2"></a>
+>> Pour arrêter définitivement notre choix sur les modèles retenus, nous avons testé avec le package Lazypredict les performances prédictives des 25 modèles et nous avons constaté que ces performances sont les mêmes que celles enrégistrées en apprentissage. 
+
+![predict_train](https://user-images.githubusercontent.com/35880186/153010652-de8fac8a-bf2c-441c-a62b-3ee69015fba2.PNG)
 
