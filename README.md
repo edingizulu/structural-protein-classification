@@ -40,7 +40,7 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
        3.1 [Itération 1: Lazypredict()](#iteration1)
       
        3.2 [Itération 2: Performances prédictives](#iteration2)
-    
+   
 ---
 ###  Contexte du Projet  <a name="contexte"></a>
 ---
@@ -266,3 +266,5 @@ Cette étape nous a permis:
 
 ![predict_train](https://user-images.githubusercontent.com/35880186/153010652-de8fac8a-bf2c-441c-a62b-3ee69015fba2.PNG)
 
+#### Difficultés rencontrées: 
+Dans ces deux itérations, la principale difficulté rencontrée a été l'entrainement des modèles avec le package [Lazypredict](https://pypi.org/project/lazypredict/). Ce package malgré son utilité a des serieux problèmes de mise à jour qui ne facilitent pas son utilisation notamment les dépendences liées à d'autres bibliothèques. Pour l'utiliser, il nous fallu l'installer dans un environement virtuel dédié. 
