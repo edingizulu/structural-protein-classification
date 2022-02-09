@@ -270,13 +270,13 @@ Cette étape nous a permis:
 
 ![predict_train](https://user-images.githubusercontent.com/35880186/153010652-de8fac8a-bf2c-441c-a62b-3ee69015fba2.PNG)
 
-#### Difficultés rencontrées: 
+#### - Difficultés rencontrées: 
 Dans ces deux itérations, la principale difficulté rencontrée a été l'entrainement des modèles avec le package [Lazypredict](https://pypi.org/project/lazypredict/). Ce package malgré son utilité a des serieux problèmes de mise à jour qui ne facilitent pas son utilisation notamment les dépendences liées à d'autres bibliothèques. Pour sa mise en oeuvre, il nous a fallu l'installer dans un environement virtuel dédié. 
 
 ---
 > -  #### 3.3 Itération 3:  Modèles retenus <a name = "modeles"></a>
 
-> #### Objectif:  
+> - #### Objectif:  
 > confirmer ou infirmer les prédictions du package Lazypredict des modèles prédéfinis précédemment. 
 >> - #### Résultats: 
 >> Sur les 12 modèles testés, 4 se dégagent nettement avec des accuracy élèvés, ces modèles sont essentiellement des algorithmes de classification d'ensemble: 
@@ -288,3 +288,5 @@ Dans ces deux itérations, la principale difficulté rencontrée a été l'entra
   
 ![model_accuracy](https://user-images.githubusercontent.com/35880186/153227827-0a7709cd-f610-4726-b5d3-9e12e4ccf289.png)
 
+> #### - Difficultés rencontrées: 
+ >> Les difficultés rencontrées ont été principalement le temps d'apprentissage des modèles sur une machine de 8 Go de RAM (16 heures), ce temps a été ramèné à 4h50' dans une autre machine plus adaptée avec 16 Go de RAM
