@@ -275,3 +275,16 @@ Dans ces deux itérations, la principale difficulté rencontrée a été l'entra
 
 ---
 > -  #### 3.3 Itération 3:  Modèles retenus <a name = "modeles"></a>
+
+> #### Objectif:  
+> confirmer ou infirmer les prédictions du package Lazypredict des modèles prédéfinis précédemment. 
+>> - #### Résultats: 
+>> Sur les 11 modèles testés, 4 se dégagent nettement avec des accuracy élèvés, ces modèles sont essentiellement des algorithmes de classification d'ensemble: 
+
+<li> ExtraTreesClassifier, 
+<li> RandomForest, 
+<li> Le Bagging Classifier,
+<li> DecisionTreeClassifier
+  
+![model_accuracy](https://user-images.githubusercontent.com/35880186/153227827-0a7709cd-f610-4726-b5d3-9e12e4ccf289.png)
+
