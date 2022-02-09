@@ -1,6 +1,4 @@
 
-
-
 # Structural Protein Classification 
 
 ![protein_structure](https://user-images.githubusercontent.com/35880186/149831530-3020edf8-5c2b-446f-be2b-b9f16904abcc.jpeg)
@@ -42,7 +40,8 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
        3.2 [Itération 2: Performances prédictives](#iteration2)
        
        3.3 [itération 3: Modèles retenus](#modeles)
-   
+    
+    4. [Métriques des différents modèles](#metriques)
 ---
 ###  Contexte du Projet  <a name="contexte"></a>
 ---
@@ -305,3 +304,13 @@ Dans ces deux itérations, la principale difficulté rencontrée a été l'entra
 __La lecture de l'allure des courbes d'apprentissage ne nous permet pas d'exclure complétement un effet d'overfitting (surapprentissage)__
  > - #### Difficultés rencontrées 
  >> Les difficultés rencontrées ont été principalement le temps d'apprentissage des modèles sur une machine de 8 Go de RAM (16 heures), ce temps a été ramèné à 4h50' dans une autre machine plus adaptée avec 16 Go de RAM
+  
+ 4. Métriques des différents modèles <a name = "metriques"></a>
+   
+ Sur les 4 modèles testés, nous avons ajouté un meta modèle qui est le __voting classifier__ 
+ > - #### ExtraTreesClassifier
+   
+![classification_report_extratree](https://user-images.githubusercontent.com/35880186/153300268-3de99052-7b97-4979-8e10-a2dbdc6f93de.PNG)
+![confusion_matrix_extra](https://user-images.githubusercontent.com/35880186/153300270-1a7846f3-ccc5-4ddd-8389-a43689c3d2db.png)
+
+
