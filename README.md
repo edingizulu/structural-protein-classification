@@ -309,8 +309,27 @@ __La lecture de l'allure des courbes d'apprentissage ne nous permet pas d'exclur
    
  Sur les 4 modèles testés, nous avons ajouté un meta modèle qui est le __voting classifier__ 
  > - #### ExtraTreesClassifier
+  ---
    
 ![classification_report_extratree](https://user-images.githubusercontent.com/35880186/153300268-3de99052-7b97-4979-8e10-a2dbdc6f93de.PNG)
 ![confusion_matrix_extra](https://user-images.githubusercontent.com/35880186/153300270-1a7846f3-ccc5-4ddd-8389-a43689c3d2db.png)
 
+> - #### DecisionTreeClassifier
+ ---
 
+ ![classification_report_dt](https://user-images.githubusercontent.com/35880186/153302273-5b516a53-e2e6-477d-9ef6-7a4d00d34e53.PNG)
+ ![confusion_matrix_dt](https://user-images.githubusercontent.com/35880186/153302328-b29c482a-146d-4e36-b1eb-79aa4cb6c3a9.png)
+
+> - #### RandomForestClassifier
+ ---
+![classification_report_rf](https://user-images.githubusercontent.com/35880186/153302672-a2b2e137-2a9f-482f-a686-5e33b761618e.PNG)
+![confusion_matrix_rf](https://user-images.githubusercontent.com/35880186/153302704-699e585c-51f1-4c71-bd14-7e29905aff9e.png)
+
+ > - #### BaggingClassifier
+ ---
+   
+   ![classification_report_bagging](https://user-images.githubusercontent.com/35880186/153303547-d726b66f-f542-47ad-a808-cefe7c1f1db0.PNG)
+   ![confusion_matrix_bagging](https://user-images.githubusercontent.com/35880186/153303567-a16eb94a-fc85-4ca5-9609-7ff0bd0701e2.png)
+
+   
+   
