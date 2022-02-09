@@ -305,7 +305,7 @@ __La lecture de l'allure des courbes d'apprentissage ne nous permet pas d'exclur
  > - #### Difficultés rencontrées 
  >> Les difficultés rencontrées ont été principalement le temps d'apprentissage des modèles sur une machine de 8 Go de RAM (16 heures), ce temps a été ramèné à 4h50' dans une autre machine plus adaptée avec 16 Go de RAM
   
- 4. Métriques des différents modèles <a name = "metriques"></a>
+ #### 4. Métriques des différents modèles <a name = "metriques"></a>
    
  Sur les 4 modèles testés, nous avons ajouté un meta modèle qui est le __voting classifier__ 
  > - #### ExtraTreesClassifier
