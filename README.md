@@ -31,7 +31,7 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
        - [structureMolecularWeight](#weight)
        - [publicationYear](#pub)
        - [Sequence Feature](#seq)
-       
+     
 #### II. [Modélisation](#modelisation)
    1. [Preprocessing](#preprocessing)
    2. [Métriques des tests](#metric)
@@ -228,6 +228,8 @@ l'intérêt grandissant de la thématique des protéines depuis 2015 (année mé
 ![seq_frequences_barplot](https://user-images.githubusercontent.com/35880186/151719278-89e8faf8-759f-4aa8-bc52-ac6bce7c493c.png)
 
 ---
+## A. MACHINE LEARNING  
+---
 ## II. Modélisation <a name ="modelisation"></a>
 ---
 > Le but de notre projet comme rappelé précédemment est la prédiction de la structure des protéines. Nous avons choisi d'utiliser les algorithmes de ML et DL, pour ce faire, nous avons abordé les étapes ci-dessous qui nous ont permis de modéliser les données et obtenir un dataset final propre et adapté à l'entrainement des différents modèles.
@@ -272,4 +274,4 @@ Cette étape nous a permis:
 Dans ces deux itérations, la principale difficulté rencontrée a été l'entrainement des modèles avec le package [Lazypredict](https://pypi.org/project/lazypredict/). Ce package malgré son utilité a des serieux problèmes de mise à jour qui ne facilitent pas son utilisation notamment les dépendences liées à d'autres bibliothèques. Pour sa mise en oeuvre, il nous a fallu l'installer dans un environement virtuel dédié. 
 
 ---
-> -  #### 3.3 Itération 3 Modèles retenus <a name = "modeles"></a>
+> -  #### 3.3 Itération 3:  Modèles retenus <a name = "modeles"></a>
