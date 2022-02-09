@@ -288,5 +288,5 @@ Dans ces deux itérations, la principale difficulté rencontrée a été l'entra
   
 ![model_accuracy](https://user-images.githubusercontent.com/35880186/153227827-0a7709cd-f610-4726-b5d3-9e12e4ccf289.png)
 
-> - #### Difficultés rencontrées: 
+> - #### Difficultés rencontrées 
  >> Les difficultés rencontrées ont été principalement le temps d'apprentissage des modèles sur une machine de 8 Go de RAM (16 heures), ce temps a été ramèné à 4h50' dans une autre machine plus adaptée avec 16 Go de RAM
