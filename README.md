@@ -41,7 +41,7 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
       
        3.2 [Itération 2: Performances prédictives](#iteration2)
        
-       5.3 [itération 3: Modèles retenus](#modeles)
+       3.3 [itération 3: Modèles retenus](#modeles)
    
 ---
 ###  Contexte du Projet  <a name="contexte"></a>
@@ -285,8 +285,19 @@ Dans ces deux itérations, la principale difficulté rencontrée a été l'entra
 <li> RandomForest, 
 <li> Le Bagging Classifier,
 <li> DecisionTreeClassifier
-  
+ Le modèle __ExtraTrees__ s'est montré un plus performant que les autres modèles. 
+   
 ![model_accuracy](https://user-images.githubusercontent.com/35880186/153227827-0a7709cd-f610-4726-b5d3-9e12e4ccf289.png)
 
-> - #### Difficultés rencontrées 
+- #### Problèmes
+>> Les performances élèvées de nos 4 modèles retenus en terme d'accuracy suscitent de la prudence dans l'interprétation des résultats. En effet, un surapprentissage de nos modèles pourrait avoir pour effet une difficulté de généralisation de ceux-ci sur de nouveaux jeux de données en terme prédictif. 
+   Un des meilleurs moyens de voir un effet de surapprentissage sur l'echantillon d'apprentissage et plus globalement sur la taille du jeu de données des modèles est la répresentation de ceux-ci en courbe d'apprentissage
+   
+![learning_rate_curve_baging](https://user-images.githubusercontent.com/35880186/153231381-be01cdc4-3445-4cc9-b05f-8c4400063b69.png)
+![learning_rate_curve_boosting](https://user-images.githubusercontent.com/35880186/153231384-4f9c5bf3-f068-4401-b469-4627a82b0ef5.png)
+![learning_rate_curve_rf](https://user-images.githubusercontent.com/35880186/153231388-0b39f435-9818-4080-9cd3-14917fa32078.png)
+![learning_rate_extratrees](https://user-images.githubusercontent.com/35880186/153231392-5f1b37d3-b747-4bc4-8abe-9d5837d8e938.png)
+   
+__La lecture de l'allure des courbes d'apprentissage ne nous permet pas d'exclure complétement un effet d'overfitting (surapprentissage)__
+ > - #### Difficultés rencontrées 
  >> Les difficultés rencontrées ont été principalement le temps d'apprentissage des modèles sur une machine de 8 Go de RAM (16 heures), ce temps a été ramèné à 4h50' dans une autre machine plus adaptée avec 16 Go de RAM
