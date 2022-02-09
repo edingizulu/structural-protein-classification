@@ -279,7 +279,7 @@ Dans ces deux itérations, la principale difficulté rencontrée a été l'entra
 > #### Objectif:  
 > confirmer ou infirmer les prédictions du package Lazypredict des modèles prédéfinis précédemment. 
 >> - #### Résultats: 
->> Sur les 11 modèles testés, 4 se dégagent nettement avec des accuracy élèvés, ces modèles sont essentiellement des algorithmes de classification d'ensemble: 
+>> Sur les 12 modèles testés, 4 se dégagent nettement avec des accuracy élèvés, ces modèles sont essentiellement des algorithmes de classification d'ensemble: 
 
 <li> ExtraTreesClassifier, 
 <li> RandomForest, 
