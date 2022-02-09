@@ -33,15 +33,15 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
 #### II. [Modélisation](#modelisation)
    1. [Preprocessing](#preprocessing)
    2. [Métriques des tests](#metric)
-   3.  [Itération des Modèles](#iteration)
+   3. [Itération des Modèles](#iteration)
    
        3.1 [Itération 1: Lazypredict()](#iteration1)
-      
-       3.2 [Itération 2: Performances prédictives](#iteration2)
        
-       3.3 [itération 3: Modèles retenus](#modeles)
-    
-    4. [Métriques des différents modèles](#metriques)
+       5.2 [Itération 2: Performances prédictives](#iteration2)
+       
+       3.3 [Itération 3: Modèles retenus](#modeles)
+       
+   4. [Métrique des modèles](#metriques)
 ---
 ###  Contexte du Projet  <a name="contexte"></a>
 ---
