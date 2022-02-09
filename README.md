@@ -229,6 +229,9 @@ l'intérêt grandissant de la thématique des protéines depuis 2015 (année mé
 
 ---
 ## A. MACHINE LEARNING  <a name ="ml"></a>
+>> Nous avons fait le choix d'adopter une double démarche dans l'analyse des données : 
+>> - la prédiction de la structure des protéines avec les algorithmes de __Machine Learning__ par l'analyse des caractéristiques physiques des protéines
+>> - la prédiction de la structure des protéines avec le __Deep Learning__ en nous basant uniquement cette fois sur l'analyse des séquences protéiques 
 ---
 ## II. Modélisation <a name ="modelisation"></a>
 ---
@@ -285,7 +288,8 @@ Dans ces deux itérations, la principale difficulté rencontrée a été l'entra
 <li> RandomForest, 
 <li> Le Bagging Classifier,
 <li> DecisionTreeClassifier
- Le modèle __ExtraTrees__ s'est montré un plus performant que les autres modèles. 
+   
+ >> Le modèle __ExtraTrees__ s'est montré un plus performant que les autres modèles. 
    
 ![model_accuracy](https://user-images.githubusercontent.com/35880186/153227827-0a7709cd-f610-4726-b5d3-9e12e4ccf289.png)
 
