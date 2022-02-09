@@ -37,7 +37,7 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
    
        3.1 [Itération 1: Lazypredict()](#iteration1)
        
-       5.2 [Itération 2: Performances prédictives](#iteration2)
+       3.2 [Itération 2: Performances prédictives](#iteration2)
        
        3.3 [Itération 3: Modèles retenus](#modeles)
        
@@ -336,7 +336,8 @@ __La lecture de l'allure des courbes d'apprentissage ne nous permet pas d'exclur
    ![classification_report_voting](https://user-images.githubusercontent.com/35880186/153304020-0099fe8e-26bc-4f2c-ab73-bca86a5125fe.PNG)
    ![confusion_matrix_voting](https://user-images.githubusercontent.com/35880186/153304039-11fca4d3-ab39-4dad-a3d5-b3209f4920ba.png)
 
-   
+   > - #### Résultats des Performances Globales des Modèles
+   ---
    ![result_resume](https://user-images.githubusercontent.com/35880186/153304238-549c8f7d-cb71-4d27-9f79-6131b85a9814.PNG)
    
    ![result_resume'](https://user-images.githubusercontent.com/35880186/153304251-81bdde8d-dd5a-465d-9adb-ce04aa72dfc1.PNG)
