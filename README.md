@@ -31,7 +31,7 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
        - [structureMolecularWeight](#weight)
        - [publicationYear](#pub)
        - [Sequence Feature](#seq)
-     
+#### A-[MACHINE LEARNING](#ml)     
 #### II. [Modélisation](#modelisation)
    1. [Preprocessing](#preprocessing)
    2. [Métriques des tests](#metric)
@@ -228,7 +228,7 @@ l'intérêt grandissant de la thématique des protéines depuis 2015 (année mé
 ![seq_frequences_barplot](https://user-images.githubusercontent.com/35880186/151719278-89e8faf8-759f-4aa8-bc52-ac6bce7c493c.png)
 
 ---
-## A. MACHINE LEARNING  
+## A. MACHINE LEARNING  <a name ="ml"></a>
 ---
 ## II. Modélisation <a name ="modelisation"></a>
 ---
