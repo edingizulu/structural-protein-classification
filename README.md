@@ -289,10 +289,10 @@ Dans ces deux itérations, la principale difficulté rencontrée a été l'entra
 <li> Le Bagging Classifier,
 <li> DecisionTreeClassifier
    
- >> Le modèle __ExtraTrees__ s'est montré un plus performant que les autres modèles. 
-   
 ![model_accuracy](https://user-images.githubusercontent.com/35880186/153227827-0a7709cd-f610-4726-b5d3-9e12e4ccf289.png)
 
+ >> Le modèle __ExtraTrees__ s'est montré un plus performant que les autres modèles. 
+   
 - #### Problèmes
 >> Les performances élèvées de nos 4 modèles retenus en terme d'accuracy suscitent de la prudence dans l'interprétation des résultats. En effet, un surapprentissage de nos modèles pourrait avoir pour effet une difficulté de généralisation de ceux-ci sur de nouveaux jeux de données en terme prédictif. 
    Un des meilleurs moyens de voir un effet de surapprentissage sur l'echantillon d'apprentissage et plus globalement sur la taille du jeu de données des modèles est la répresentation de ceux-ci en courbe d'apprentissage
