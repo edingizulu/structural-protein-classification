@@ -6,6 +6,12 @@ Config file for Streamlit App
 
 from member import Member
 
+#root_dir='C:/Users/engizulu/Documents/Projet_Datascientest/structural-protein-classification/'
+root_dir='../'
+
+img_dir = root_dir+'images/'
+models_dir = root_dir+'models/'
+data_dir = root_dir+'data/'
 
 TITLE = "Structural Protein Classification"
 

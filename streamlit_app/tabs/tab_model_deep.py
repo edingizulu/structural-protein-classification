@@ -1,12 +1,13 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-from PIL import Image
+#import pandas as pd
+#import numpy as np
+#from PIL import Image
 
+from config import img_dir
 
 title = "Analyse de la séquence - Model DL"
 sidebar_name = "Model DL"
-img_dir = '../images/'
+#img_dir = '../images/'
 
 def run():
 
@@ -41,10 +42,36 @@ def run():
             st.markdown(
                 """
                 Fréquence des lettres dans les séquences
+
+                
                 """
             )
             st.image(img_dir+'seq_codes_frequency.png')
 
         st.subheader("Preprocessing")
+
+        st.write(
+            """
+            ### Tokenization
+            - Problème de sequence-to-sequence learning 
+            - Tokenization classique, avec modèle réduit aux chaines de longueur < 1000 caractères et padding des séquences inférieures
+            """
+        )
+
+        st.write(
+            """
+            ### Algorithmes testés
+            1. CNN
+
+            """
+        )
+
+        st.write(
+            """
+            2. LSTM
+            
+            """
+        )
+
 
         

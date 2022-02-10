@@ -7,10 +7,11 @@ from PIL import Image
 import joblib
 import preprocessing as pp
 
+from config import img_dir
 
 title = "Analyse des propriétés physiques - Model ML"
 sidebar_name = "Model ML"
-img_dir = '../images/'
+#img_dir = '../images/'
 
 
 def run():
@@ -36,7 +37,7 @@ def run():
     )
 
     st.subheader("1. Preprocessing")
-    missing_img = img_dir+'missing_values.png'
+    #missing_img = img_dir+'missing_values.png'
     st.markdown(
     """
     Préalable à cette opération : Une étude approfondie de la définition de chaque variable, son type,

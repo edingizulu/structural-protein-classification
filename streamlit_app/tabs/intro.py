@@ -1,9 +1,9 @@
 import streamlit as st
-
+from config import img_dir
 
 title = "Structural Protein Classification"
 sidebar_name = "Présentation"
-img_dir = '../images/'
+#img_dir = '../images/'
 
 def run():
 
@@ -17,32 +17,34 @@ def run():
 
     st.markdown("--------")
 
-    st.markdown(
+    with st.container():
+      st.markdown("""## Qu'est ce que c'est ? """)
+      st.markdown(
+        """
+            Les protéines sont des macromolécules organiques présentes dans toutes les cellules vivantes. 
+            Elles sont les plus abondantes des molécules organiques des cellules et constituent à elles seules 
+            plus de 50% du poids à sec des êtres vivants.
+        """
+      )
+      st.markdown(""" ## A quoi ça sert?  """)
+      st.markdown(
+        """
+            Elles remplissent de multiples fonctions pour les cellules. Elles interviennent pour des fonctions de transport (notamment d'oxygène),
+            comme enzymes, ou hormones.
       """
-      ## Qu'est ce que c'est ? 
-          Les protéines sont des macromolécules organiques présentes dans toutes les cellules vivantes. 
-          Elles sont les plus abondantes des molécules organiques des cellules et constituent à elles seules 
-          plus de 50% du poids à sec des êtres vivants.
-      
-      ## A quoi ça sert? 
-          Ils remplissent de multiples fonctions pour les cellules. Elles interviennent pour des fonctions de transport (notamment d'oxygène),
-          comme enzymes, ou hormones.
-      """
-    )
-    st.image(img_dir+'proteinfunctions.png')
+      )
+      st.image(img_dir+'proteinfunctions.png')
 
-    st.markdown(
-      """
-      ## Les classifier? Pourquoi?
-      Connaître la classe d'une protéine, revient à identifier sa fonction dans la cellule. Il est donc capital de connaître sa composition (séquence),
-      ses propriétés physiques, dans le but de savoir à quoi elle sert dans la cellule.
-      """
-    )
+      st.markdown(""" ## Les classifier? Pourquoi? """)
+      st.markdown(
+        """
+        Connaître la classe d'une protéine, revient à identifier sa fonction dans la cellule. Il est donc capital de connaître sa composition (séquence complète),
+        ses propriétés physiques, dans le but de savoir à quoi elle sert dans la cellule.
+        """
+      )
 
     st.info("""
-      Le but de notre projet est d'étudier la prédiction de la classe d'une protéine, en nous basant sur les données fournies par la Protein Data Bank
-      Ces données comprennent à la fois la séquence complète de la macromolécule, ainsi que ses propriétés physiques et les méthodes utilisées pour 
-      les obtenir. 
+      **_Le but de notre projet est de prédire la classe d'une protéine, en nous basant sur les données qui décrivent sa structure ou ses propriétés_** 
     """ )
     #st.markdown(
     #    """

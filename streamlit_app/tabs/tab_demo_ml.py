@@ -7,12 +7,14 @@ import pandas as pd
 import numpy as np
 import preprocessing as pp
 
+from config import models_dir
+
 
 title = "Demo - Model ML"
 sidebar_name = "Demo - Model ML"
 
-model_path = "../models/prot_clf.joblib"
-model_reduced_path="../models/prot_rfe_clf.joblib"
+model_path = models_dir + "prot_clf.joblib"
+model_reduced_path= models_dir + "prot_rfe_clf.joblib"
 
 columns_clf = [ 'residueCount', 'resolution', 'structureMolecularWeight',
                 'crystallizationTempK', 'densityMatthews', 'densityPercentSol',
@@ -62,13 +64,12 @@ def ml_predict_with_dataframe(df):
 
     return data
 
-
 def ml_predict_with_user_input(input_dict):
     #Open the model with parameters reduced to 6
     model = joblib.load(model_reduced_path)
 
-    df = pd.DataFrame.from_dict(input_dict, columns=['residueCount', 'resolution', 'structureMolecularWeight','crystallizationTempK', 'densityMatthews', 'densityPercentSol'])
-
+    #df = pd.DataFrame.from_dict(input_dict) #, orient='index', columns=['residueCount', 'resolution', 'structureMolecularWeight','crystallizationTempK', 'densityMatthews', 'densityPercentSol'])
+    df = pd.DataFrame(input_dict, index=[0])
     y_pred = model.predict(df)
 
     return y_pred
@@ -77,50 +78,48 @@ def ml_predict_with_user_input(input_dict):
 def run():
 
     st.title(title)
-
+    
     with st.container():
-        st.subheader("Test ML Model")
         st.markdown("--------")
-        col1, col2 = st.columns(2)
-        with col1:
-            with st.container():
-                uploaded_file = st.file_uploader("Upload test CSV file", type=["csv"])
-            st.markdown("--------")
-            with st.container():
-                manual_input =  st.button('Saisie des paramètres')
-        
-        with col2:
-        #st.markdown("--------")
+        st.subheader("Charger un fichier de test")
+
+        with st.container():
+            uploaded_file = st.file_uploader("Upload test CSV file", type=["csv"])
             placeholder = st.empty()
 
-        if uploaded_file is not None:
-            print(uploaded_file)
-            dataframe = pd.read_csv(uploaded_file)
-            with placeholder.container():
-                with st.spinner("Please wait..."): 
-                    df = ml_predict_with_dataframe(dataframe)
-                
-                st.dataframe(data=df[['predicted_labels']]) 
-    #st.markdown("""<hr style="height:10px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
-
-        if manual_input:
-            with placeholder.container():
-                with st.form(key='user_inputs'):
-                    col1, col2, col3 = st.columns(3)
-                    with col1:
-                        residueCount  = st.number_input('residuecount')
-                        resolution    = st.number_input('resolution')
-                        
-                    with col2:  
-                        crystallizationTempK     = st.number_input('crystallizationTempK')  
-                        structureMolecularWeight = st.number_input('structureMolecularWeight')
-                    with col3:    
-                        densityMatthews   = st.number_input('densityMatthews')
-                        densityPercentSol = st.number_input('densityPercentSol')
+            if uploaded_file is not None:
+                print(uploaded_file)
+                dataframe = pd.read_csv(uploaded_file)
+                with placeholder.container():
+                    with st.spinner("Please wait..."): 
+                        df = ml_predict_with_dataframe(dataframe)
                     
-                        submit_button  =  st.form_submit_button(label='Predict')
-                        
-                if submit_button:
+                    st.dataframe(data=df[['predicted_labels']]) 
+            st.markdown("--------")
+
+        with st.container():
+            #manual_input =  st.button('Saisie des paramètres')
+            #st.markdown("""<hr style="height:10px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
+            #if manual_input:
+                #with placeholder.container():
+            st.subheader("Saisie manuelle des paramètres")
+
+            with st.form(key='user_inputs'):
+                col1, col2, col3 = st.columns(3)
+                with col1:
+                    residueCount  = st.number_input('residuecount')
+                    resolution    = st.number_input('resolution')
+                    
+                with col2:  
+                    crystallizationTempK     = st.number_input('crystallizationTempK')  
+                    structureMolecularWeight = st.number_input('structureMolecularWeight')
+                with col3:    
+                    densityMatthews   = st.number_input('densityMatthews')
+                    densityPercentSol = st.number_input('densityPercentSol')
+                
+                submit_button  =  st.form_submit_button(label='Predict')
+                            
+                if submit_button:                       
                     #['residueCount', 'resolution', 'structureMolecularWeight','crystallizationTempK', 'densityMatthews', 'densityPercentSol']
                     input_dict={}
                     input_dict['residueCount']             = residueCount
@@ -131,11 +130,18 @@ def run():
                     input_dict['densityPercentSol']        = densityPercentSol
 
                     #with placeholder.container():
-                    st.write(structureMolecularWeight)
+                    #st.write(structureMolecularWeight)
                     #Make prediction
-                    #with st.spinner("Wait.."):
-                    print("HERE")
-                    #predicted_class = ml_predict_with_user_input(input_dict)
+                    placeholder2 = st.empty()
+                    with st.spinner("Wait.."):
+                        predicted_class = ml_predict_with_user_input(input_dict)
+                        print(predicted_class)
+                        
+                        with placeholder2.container() :
+                            st.write("Predicted class : "+ predicted_class)
+                    
+
+                    
                     
                     
 

@@ -3,15 +3,18 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
+from config import data_dir, img_dir
 
 title = "Données et méthodes"
 sidebar_name = "Données et méthodes"
 
-description = st.container()
-img_dir = '../images/'
+#data_path = 'C:/Users/engizulu/Documents/Projet_Datascientest/structural-protein-classification/data/'
 
-df_prot = pd.read_csv('../data/data_no_dups.csv')
-df_seq = pd.read_csv('../data/data_seq.csv')
+description = st.container()
+#img_dir = 'C:/Users/engizulu/Documents/Projet_Datascientest/structural-protein-classification/images/'
+
+df_prot = pd.read_csv(data_dir+'data_no_dups.csv')
+df_seq = pd.read_csv(data_dir+'data_seq.csv')
 df = pd.merge(df_prot, df_seq, on=['structureId', 'macromoleculeType', 'residueCount'], how='inner')
 
 
