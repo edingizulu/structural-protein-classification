@@ -363,3 +363,6 @@ L'optimisation des paramètres n'améliore pas d'avantage le modèle qui était 
 ![confusion_matrix_gridserachcv_ET](https://user-images.githubusercontent.com/35880186/153683505-43641f83-6b58-4670-a8d5-b34454a8d662.png)
 
    > - ### Interpretatbilité du Modèle <a name = "retainmode"></a>
+L'algorithme ET s'appuie sur certaines variables importantes pour prédire les classes de protéines. Ici le poids moléculaire a toute son importance dans la prise de décision de l'algorithme, il en est de même du residuecount ou encore de la résolution. 
+   
+![ET_FeaturesImportance](https://user-images.githubusercontent.com/35880186/153685343-209918aa-dd66-4723-b504-3dcc50c8f02a.png)
