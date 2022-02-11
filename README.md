@@ -44,6 +44,9 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
    4. [Métrique des modèles](#metriques)
    
    5. [Optimisation des paramètres: Tuning](#tuning)
+   6. [Interprétatbilité du Modèle](#retainmode)
+  
+  
 ---
 ###  Contexte du Projet  <a name="contexte"></a>
 ---
@@ -359,4 +362,4 @@ L'optimisation des paramètres n'améliore pas d'avantage le modèle qui était 
    
 ![confusion_matrix_gridserachcv_ET](https://user-images.githubusercontent.com/35880186/153683505-43641f83-6b58-4670-a8d5-b34454a8d662.png)
 
-
+   > - ### Interpretatbilité du Modèle <a name = "retainmode"></a>
