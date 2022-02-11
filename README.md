@@ -42,6 +42,8 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
        3.3 [Itération 3: Modèles retenus](#modeles)
        
    4. [Métrique des modèles](#metriques)
+   
+   5. [Optimisation des paramètres: Tuning](#tuning)
 ---
 ###  Contexte du Projet  <a name="contexte"></a>
 ---
@@ -341,3 +343,6 @@ __La lecture de l'allure des courbes d'apprentissage ne nous permet pas d'exclur
    ![result_resume](https://user-images.githubusercontent.com/35880186/153304238-549c8f7d-cb71-4d27-9f79-6131b85a9814.PNG)
    
    ![result_resume'](https://user-images.githubusercontent.com/35880186/153304251-81bdde8d-dd5a-465d-9adb-ce04aa72dfc1.PNG)
+   
+   ---
+   > - ### Optimisation des paramètres: Tuning <a name = "tuning"></a>
