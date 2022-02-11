@@ -351,7 +351,7 @@ __La lecture de l'allure des courbes d'apprentissage ne nous permet pas d'exclur
  >  - ### Objectif
    Optimiser les paramètres du modèle ET (ExtraTreesClassifier) avec GridSearch pour améliorer ses performances. 
  >  - ### Résultats:    
-L'optimisation n'améliore pas d'avantage le modèle qui déjà reste performant. 
+L'optimisation des paramètres n'améliore pas d'avantage le modèle qui était déjà  performant, tout au plus nous constatons pour la classe ribosome une meilleure prédiction. 
    
 ![ExtraTreesGrid](https://user-images.githubusercontent.com/35880186/153682403-8b51d74c-9a05-4707-8d17-4e737b5a34af.PNG)
  
