@@ -345,4 +345,9 @@ __La lecture de l'allure des courbes d'apprentissage ne nous permet pas d'exclur
    ![result_resume'](https://user-images.githubusercontent.com/35880186/153304251-81bdde8d-dd5a-465d-9adb-ce04aa72dfc1.PNG)
    
    ---
-   > - ### Optimisation des paramètres: Tuning <a name = "tuning"></a>
+ > - ### Optimisation des paramètres: Tuning <a name = "tuning"></a>
+ > Le modèle qui s'est montré un peu plus performant sur les 4 modèles retenus reste __ExtraTreesClassifier__ (Extremely Randomized Trees) dont l'accuracy en echantillon test a été de __92%__. Nous avons pour la partie demo streamlit choisi ce modèle en plus de cette performance sa propension à contrôler le surapprentissage (pas totalement exclus comme vu précédemment). 
+   
+ >  - ### Objectif
+   Optimiser les paramètres du modèle ET (ExtraTreesClassifier) avec GridSearch pour améliorer ses performances. 
+ >  - ### Résultats:    
