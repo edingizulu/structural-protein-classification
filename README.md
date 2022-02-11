@@ -351,3 +351,12 @@ __La lecture de l'allure des courbes d'apprentissage ne nous permet pas d'exclur
  >  - ### Objectif
    Optimiser les paramètres du modèle ET (ExtraTreesClassifier) avec GridSearch pour améliorer ses performances. 
  >  - ### Résultats:    
+L'optimisation n'améliore pas d'avantage le modèle qui déjà reste performant. 
+   
+![ExtraTreesGrid](https://user-images.githubusercontent.com/35880186/153682403-8b51d74c-9a05-4707-8d17-4e737b5a34af.PNG)
+ 
+![classification_report_gridsearch](https://user-images.githubusercontent.com/35880186/153682456-eec53e75-ef20-4913-99c2-4ce2abad7ea1.PNG)
+   
+![confusion_matrix_gridserachcv_ET](https://user-images.githubusercontent.com/35880186/153683505-43641f83-6b58-4670-a8d5-b34454a8d662.png)
+
+
