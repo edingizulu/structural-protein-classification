@@ -46,7 +46,8 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
    5. [Optimisation des paramètres: Tuning](#tuning)
    6. [Interprétatbilité du Modèle](#retainmode)
   
-  
+ #### B- [DEEP LEARNING](#deep)
+ #### III-[Deep Modélisation](#deepmodel)
 ---
 ###  Contexte du Projet  <a name="contexte"></a>
 ---
@@ -366,4 +367,9 @@ L'optimisation des paramètres n'améliore pas d'avantage le modèle qui était 
 L'algorithme ET s'appuie sur certaines variables importantes pour prédire les classes de protéines. Ici le poids moléculaire a toute son importance dans la prise de décision de l'algorithme, il en est de même du residuecount ou encore de la résolution. 
    
 ![ET_FeaturesImportance](https://user-images.githubusercontent.com/35880186/153686142-f7047720-4866-4841-b5cd-cb48011bce51.png)
-
+---
+#### DEEP LEARNING <a name = "deep"></a>
+---
+> Dans cette deuxième de notre projet, nous aborderons deux modèles de deep learning: un modèle convolutionnel à une dimension et en dernier le modèle d'apprentissage profond le LSTM.
+   
+#### Deep Modélisation <a name = "deepmodel"></a>
