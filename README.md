@@ -42,6 +42,16 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
        3.3 [Itération 3: Modèles retenus](#modeles)
        
    4. [Métrique des modèles](#metriques)
+   
+   5. [Optimisation des paramètres: Tuning](#tuning)
+   6. [Interprétatbilité du Modèle](#retainmode)
+  
+ #### B- [DEEP LEARNING](#deep)
+ #### III-[Deep Modélisation](#deepmodel)
+ 
+   1. [Convolutional Neural Network](#cnn)
+   
+   2. [Résultats](#deepresult)
 ---
 ###  Contexte du Projet  <a name="contexte"></a>
 ---
@@ -341,3 +351,65 @@ __La lecture de l'allure des courbes d'apprentissage ne nous permet pas d'exclur
    ![result_resume](https://user-images.githubusercontent.com/35880186/153304238-549c8f7d-cb71-4d27-9f79-6131b85a9814.PNG)
    
    ![result_resume'](https://user-images.githubusercontent.com/35880186/153304251-81bdde8d-dd5a-465d-9adb-ce04aa72dfc1.PNG)
+   
+   ---
+ > - ### Optimisation des paramètres: Tuning <a name = "tuning"></a>
+ > Le modèle qui s'est montré un peu plus performant sur les 4 modèles retenus reste __ExtraTreesClassifier__ (Extremely Randomized Trees) dont l'accuracy en echantillon test a été de __92%__. Nous avons pour la partie demo streamlit choisi ce modèle en plus de cette performance sa propension à contrôler le surapprentissage (pas totalement exclus comme vu précédemment). 
+   
+ >  - ### Objectif
+   Optimiser les paramètres du modèle ET (ExtraTreesClassifier) avec GridSearch pour améliorer ses performances. 
+ >  - ### Résultats:    
+L'optimisation des paramètres n'améliore pas d'avantage le modèle qui était déjà  performant, tout au plus nous constatons pour la classe ribosome une meilleure prédiction. 
+   
+![ExtraTreesGrid](https://user-images.githubusercontent.com/35880186/153682403-8b51d74c-9a05-4707-8d17-4e737b5a34af.PNG)
+ 
+![classification_report_gridsearch](https://user-images.githubusercontent.com/35880186/153682456-eec53e75-ef20-4913-99c2-4ce2abad7ea1.PNG)
+   
+![confusion_matrix_gridserachcv_ET](https://user-images.githubusercontent.com/35880186/153683505-43641f83-6b58-4670-a8d5-b34454a8d662.png)
+
+   > - ### Interpretatbilité du Modèle <a name = "retainmode"></a>
+L'algorithme ET s'appuie sur certaines variables importantes pour prédire les classes de protéines. Ici le poids moléculaire a toute son importance dans la prise de décision de l'algorithme, il en est de même du residuecount ou encore de la résolution. 
+   
+![ET_FeaturesImportance](https://user-images.githubusercontent.com/35880186/153686142-f7047720-4866-4841-b5cd-cb48011bce51.png)
+---
+> Nous n'avons pas pu utiliser le package shap pour une interprétation fine du modèle ExtraTrees, les shap_values n'ayant pu être extraites de la fonction explainer du module, les temps de calcul extrêment allongés (plus de 24h). Est-ce dû à la volumétrie des données? 
+Les packages eli5 et lime nous ont permis d'avoir une interprétation locale de l'algorithme. 
+- Eli5: 
+   > Les coefficients associés à chaque variable sont de même ordre que les features importances vus précédemment.
+
+   > 
+   ![eli5_coeff](https://user-images.githubusercontent.com/35880186/153714539-9b644528-46cb-47a7-822f-06e64503232b.PNG)
+- Lime: 
+   > Ici avec le package la contribution de chaque variable dans la prédiction de "l'individu 1"
+   
+   ![lime_decision](https://user-images.githubusercontent.com/35880186/153715039-9a7c451f-253f-4420-9ef9-b9109de5ecfc.PNG)
+
+
+#### DEEP LEARNING <a name = "deep"></a>
+---
+> Dans cette deuxième de notre projet, nous aborderons deux modèles de deep learning: un modèle convolutionnel à une dimension et en dernier le modèle d'apprentissage profond le LSTM.
+   
+#### Deep Modélisation <a name = "deepmodel"></a>
+> Notre fichier de données ayant été nettoyé dans la modélisation précédente, nous n'avons gardé que les features __sequence__ et __target__. 
+> - #### Convolutionnal Neural Network (CNN) <a name = "cnn"></a>:
+   >> Les réseaux de neurone convolutionnels bien que souvent appliqués en imagerie pour la classification , peuvent aussi être utilisés dans la classification des séquences.Ici la séquence d'entrée est utilisée comme une image .  
+
+> Comme précédemment les métriques utilisées sont les mêmes (accuracy, classification report, matrice de confusion).
+Nous avons construit le modèle convolutionnel de façon séquentielle avec des couches denses de batchnormalization, de Maxpooling1D et des couches denses full connected.  
+
+![summary_sequential_cnn1_deep](https://user-images.githubusercontent.com/35880186/153691674-90629687-0099-4279-83c8-f60849fa0c9c.png)  
+   
+![summary_plot_cnn1_deep](https://user-images.githubusercontent.com/35880186/153691428-2e1dc6c1-e1fc-484e-a75e-6a28edbd86ce.png)
+
+   > - #### Résultats: <a name = "deepresult"></a>
+   
+   ![model_loss_accuracy_by_epoch](https://user-images.githubusercontent.com/35880186/153716413-1dc3bd1b-04d7-496d-b6fc-5d5250ffb793.png)
+   
+   > - ##### train accuracy
+    
+   ![train_accuracy_deep_cnn](https://user-images.githubusercontent.com/35880186/153716176-cd18df2f-0336-4370-b754-b690be6f2148.PNG)
+   
+   > - ##### test accuracy
+![test_accuracy_deep_cnn](https://user-images.githubusercontent.com/35880186/153716175-46dca66f-aa8b-433e-8372-834909d2bcff.PNG)
+
+ >> L'accuracy sur les données d'apprentissage et test sont proches et globalement le réseau convolutionnel reste moins efficace que le model ExtraTrees mais à priori il n'y a pas d'overfitting, ce qui est non négligeable dans la généralisation du modèle. 
