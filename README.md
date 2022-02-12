@@ -29,8 +29,9 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
        - [structureMolecularWeight](#weight)
        - [publicationYear](#pub)
        - [Sequence Feature](#seq)
+	  
+#### II-[Méthodologie](#methodologie)   
 #### A-[MACHINE LEARNING](#ml)     
-#### II. [Modélisation](#modelisation)
    1. [Preprocessing](#preprocessing)
    2. [Métriques des tests](#metric)
    3. [Itération des Modèles](#iteration)
@@ -46,12 +47,15 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
    5. [Optimisation des paramètres: Tuning](#tuning)
    6. [Interprétatbilité du Modèle](#retainmode)
   
- #### B- [DEEP LEARNING](#deep)
- #### III-[Deep Modélisation](#deepmodel)
- 
-   1. [Convolutional Neural Network](#cnn)
+ #### B- [DEEP LEARNING](#deep) 
+   1. [Preprocessing](#preprocessing_deep)
    
-   2. [Résultats](#deepresult)
+   2. [Convolutional Neural Network](#cnn)
+   
+   3. [Résultats](#deepresult)
+ 
+#### III. [Conclusion](#conclusion) 
+   
 ---
 ###  Contexte du Projet  <a name="contexte"></a>
 ---
@@ -237,14 +241,16 @@ l'intérêt grandissant de la thématique des protéines depuis 2015 (année mé
 ![seq_frequences_barplot](https://user-images.githubusercontent.com/35880186/151719278-89e8faf8-759f-4aa8-bc52-ac6bce7c493c.png)
 
 ---
-## A. MACHINE LEARNING  <a name ="ml"></a>
+## II. Méthodologie <a name="methodologie"></a>
 >> Nous avons fait le choix d'adopter une double démarche dans l'analyse des données : 
->> - la prédiction de la structure des protéines avec les algorithmes de __Machine Learning__ par l'analyse des caractéristiques physiques des protéines
->> - la prédiction de la structure des protéines avec le __Deep Learning__ en nous basant uniquement cette fois sur l'analyse des séquences protéiques 
+>> - la prédiction de la structure des protéines avec des algorithmes de __Machine Learning__ par l'analyse des caractéristiques physiques des protéines
+>> - la prédiction de la structure des protéines avec des algorithmes de __Deep Learning__ en nous basant uniquement cette fois sur l'analyse des séquences protéiques 
+
+## III. Modélisation <a name ="modelisation"></a>
 ---
-## II. Modélisation <a name ="modelisation"></a>
+
+## A. Machine Learning <a name ="ml"></a>
 ---
-> Le but de notre projet comme rappelé précédemment est la prédiction de la structure des protéines. Nous avons choisi d'utiliser les algorithmes de ML et DL, pour ce faire, nous avons abordé les étapes ci-dessous qui nous ont permis de modéliser les données et obtenir un dataset final propre et adapté à l'entrainement des différents modèles.
 ### 1. Preprocessing des données:  <a name ="preprocessing"></a>
 ---
 > L'exploration et la phase d'analyse terminées, nous avons nettoyé  et préparé le jeu de données pour l'apprentissage. 
@@ -385,14 +391,21 @@ Les packages eli5 et lime nous ont permis d'avoir une interprétation locale de 
    ![lime_decision](https://user-images.githubusercontent.com/35880186/153715039-9a7c451f-253f-4420-9ef9-b9109de5ecfc.PNG)
 
 
-#### DEEP LEARNING <a name = "deep"></a>
+## B. Deep Learning <a name ="deep"></a>
 ---
-> Dans cette deuxième de notre projet, nous aborderons deux modèles de deep learning: un modèle convolutionnel à une dimension et en dernier le modèle d'apprentissage profond le LSTM.
-   
-#### Deep Modélisation <a name = "deepmodel"></a>
-> Notre fichier de données ayant été nettoyé dans la modélisation précédente, nous n'avons gardé que les features __sequence__ et __target__. 
-> - #### Convolutionnal Neural Network (CNN) <a name = "cnn"></a>:
-   >> Les réseaux de neurone convolutionnels bien que souvent appliqués en imagerie pour la classification , peuvent aussi être utilisés dans la classification des séquences.Ici la séquence d'entrée est utilisée comme une image .  
+> Le but poursuivi ici est de d'obtenir la classification uniquement en se basant sur la séquence d'acides aminés. Le problème est ramené à un cas de Natural Language Processing (NLP), Sequence-to-sequence.
+Nous aborderons deux modèles de deep learning: un modèle convolutionnel à une dimension et en dernier le modèle d'apprentissage profond LSTM.
+
+Une séquence est constitué d'une suite de lettres répresentants des acides aminés, la longueur des séquences à notre disposition va de 1 à un maximum de 5070 caractères
+![sequence_example](https://github.com/DataScientest-Studio/structural-protein-classification/blob/main/images/sequence_p.PNG)
+
+### 1. Preprocessing
+> Du jeu de données nettoyé précédemment on ne conserve que les variables __sequence__ et __target__. 
+
+
+### 2. Convolutional Neural Network (CNN)<a name="cnn"></a>
+
+>> Les réseaux de neurone convolutionnels bien que souvent appliqués en imagerie pour la classification, peuvent aussi être utilisés dans la classification des séquences.Ici la séquence d'entrée est utilisée comme une image 1D.  
 
 > Comme précédemment les métriques utilisées sont les mêmes (accuracy, classification report, matrice de confusion).
 Nous avons construit le modèle convolutionnel de façon séquentielle avec des couches denses de batchnormalization, de Maxpooling1D et des couches denses full connected.  
