@@ -365,4 +365,5 @@ L'optimisation des paramètres n'améliore pas d'avantage le modèle qui était 
    > - ### Interpretatbilité du Modèle <a name = "retainmode"></a>
 L'algorithme ET s'appuie sur certaines variables importantes pour prédire les classes de protéines. Ici le poids moléculaire a toute son importance dans la prise de décision de l'algorithme, il en est de même du residuecount ou encore de la résolution. 
    
-![ET_FeaturesImportance](https://user-images.githubusercontent.com/35880186/153685343-209918aa-dd66-4723-b504-3dcc50c8f02a.png)
+![ET_FeaturesImportance](https://user-images.githubusercontent.com/35880186/153686142-f7047720-4866-4841-b5cd-cb48011bce51.png)
+
