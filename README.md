@@ -397,7 +397,7 @@ Les packages eli5 et lime nous ont permis d'avoir une interprétation locale de 
 Nous aborderons deux modèles de deep learning: un modèle convolutionnel à une dimension et en dernier le modèle d'apprentissage profond LSTM.
 
 Une séquence est constitué d'une suite de lettres répresentants des acides aminés, la longueur des séquences à notre disposition va de 1 à un maximum de 5070 caractères
-![sequence_example](https://github.com/DataScientest-Studio/structural-protein-classification/blob/main/images/sequence_p.PNG)
+![sequence_example](https://github.com/DataScientest-Studio/structural-protein-classification/blob/main/images/sequence_example.png)
 
 ### 1. Preprocessing
 > Du jeu de données nettoyé précédemment on ne conserve que les variables __sequence__ et __target__. 
