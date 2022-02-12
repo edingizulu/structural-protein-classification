@@ -433,10 +433,11 @@ Nous aborderons deux modèles de deep learning: un modèle convolutionnel à une
 
 > Comme précédemment les métriques utilisées sont les mêmes (accuracy, classification report, matrice de confusion).
 Nous avons construit le modèle convolutionnel de façon séquentielle avec des couches denses de batchnormalization, de Maxpooling1D et des couches denses full connected.  
+  
+![summary_plot_cnn1d](https://user-images.githubusercontent.com/35880186/153732144-80b4c71c-3e73-4a18-b1bd-de2ad4134fe9.PNG)
 
-![summary_sequential_cnn1_deep](https://user-images.githubusercontent.com/35880186/153691674-90629687-0099-4279-83c8-f60849fa0c9c.png)  
-   
-![summary_plot_cnn1_deep](https://user-images.githubusercontent.com/35880186/153691428-2e1dc6c1-e1fc-484e-a75e-6a28edbd86ce.png)
+![summary_sequential_cnn1_deep](https://user-images.githubusercontent.com/35880186/153732181-4cec1b69-b76e-4635-884b-586f9d438e5b.png)
+
 
 ### 3. Tests des modèles:  <a name ="test_dl"></a>
 ---
@@ -448,13 +449,16 @@ Nous avons construit le modèle convolutionnel de façon séquentielle avec des 
    > - ##### train accuracy
     
    ![train_accuracy_deep_cnn](https://user-images.githubusercontent.com/35880186/153716176-cd18df2f-0336-4370-b754-b690be6f2148.PNG)
+   ![train_accuracy_deep_cnn](https://github.com/DataScientest-Studio/structural-protein-classification/blob/main/images/train_accuracy_deep_cnn.png)
    
    > - ##### test accuracy
-![test_accuracy_deep_cnn](https://user-images.githubusercontent.com/35880186/153716175-46dca66f-aa8b-433e-8372-834909d2bcff.PNG)
+	
+![test_accuracy_deep_cnn](https://github.com/DataScientest-Studio/structural-protein-classification/blob/main/images/test_accuracy_deep_cnn.png)
 
  >> L'accuracy sur les données d'apprentissage et test sont proches et globalement le réseau convolutionnel reste moins efficace que le model ExtraTrees mais à priori il n'y a pas d'overfitting, ce qui est non négligeable dans la généralisation du modèle. 
 	
-> -#### 3.2 Modèle 2: LSTM <a name ="modele_lstm"></a>
-	
+> - #### 3.2 Modèle 2: LSTM <a name ="modele_lstm"></a>
+
+> ![model_lstm](https://github.com/DataScientest-Studio/structural-protein-classification/blob/main/images/model_rnn.png)
 
    
