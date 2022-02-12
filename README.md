@@ -403,8 +403,9 @@ Nous avons construit le modèle convolutionnel de façon séquentielle avec des 
 
    > - #### Résultats: <a name = "deepresult"></a>
    
+   ![train_accuracy_deep_cnn](https://user-images.githubusercontent.com/35880186/153716176-cd18df2f-0336-4370-b754-b690be6f2148.PNG)
    > - train accuracy
-![train_accuracy_deep_cnn](https://user-images.githubusercontent.com/35880186/153716176-cd18df2f-0336-4370-b754-b690be6f2148.PNG)
+
   
    ![model_loss_accuracy_by_epoch](https://user-images.githubusercontent.com/35880186/153716413-1dc3bd1b-04d7-496d-b6fc-5d5250ffb793.png)
 
