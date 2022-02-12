@@ -370,6 +370,7 @@ L'algorithme ET s'appuie sur certaines variables importantes pour prédire les c
    
 ![ET_FeaturesImportance](https://user-images.githubusercontent.com/35880186/153686142-f7047720-4866-4841-b5cd-cb48011bce51.png)
 ---
+> Nous n'avons pas pu utiliser le package shap pour une interprétation fine du modèle ExtraTrees, les shap_values n'ont pu être extraites de la fonction explainer du module, les temps de calcul extrêment allongés (plus de 24h). Est-ce dû à la volumétrie des données? de l
 #### DEEP LEARNING <a name = "deep"></a>
 ---
 > Dans cette deuxième de notre projet, nous aborderons deux modèles de deep learning: un modèle convolutionnel à une dimension et en dernier le modèle d'apprentissage profond le LSTM.
