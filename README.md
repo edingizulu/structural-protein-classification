@@ -377,5 +377,12 @@ L'algorithme ET s'appuie sur certaines variables importantes pour prédire les c
 #### Deep Modélisation <a name = "deepmodel"></a>
 > Notre fichier de données ayant été nettoyé dans la modélisation précédente, nous n'avons gardé que les features __sequence__ et __target__. 
 > - #### Convolutionnal Neural Network (CNN) <a name = "cnn"></a>:
-   >> Les réseaux de neurone convolutionnels bien souvent appliqués en imagerie pour la classification , peuvent aussi être utilisés dans la classification des séquences.Ici la séquence d'entrée est utilisée comme une image .  
+   >> Les réseaux de neurone convolutionnels bien que souvent appliqués en imagerie pour la classification , peuvent aussi être utilisés dans la classification des séquences.Ici la séquence d'entrée est utilisée comme une image .  
+
+> Comme précédemment les métriques utilisées sont les mêmes (accuracy, classification report, matrice de confusion).
+Nous avons construit le modèle convolutionnel de façon séquentielle avec des couches denses de batchnormalization, de Maxpooling1D et des couches denses full connected.  
+
+![summary_sequential_cnn1_deep](https://user-images.githubusercontent.com/35880186/153691674-90629687-0099-4279-83c8-f60849fa0c9c.png)  
    
+![summary_plot_cnn1_deep](https://user-images.githubusercontent.com/35880186/153691428-2e1dc6c1-e1fc-484e-a75e-6a28edbd86ce.png)
+
