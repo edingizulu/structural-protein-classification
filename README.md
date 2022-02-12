@@ -15,7 +15,7 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
 ### Sommaire
 [Contexte du projet](#contexte)
 
-#### I. [Analyse des données](#analyse)
+### I. [Analyse des données](#analyse)
    1. [Source des données](#source)
    2. [Nettoyage des données](#nettoyage)
    3. [Analyse Exploratoire des données ](#eda)
@@ -30,8 +30,11 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
        - [publicationYear](#pub)
        - [Sequence Feature](#seq)
 	  
-#### II-[Méthodologie](#methodologie)   
-#### A-[MACHINE LEARNING](#ml)     
+### II. [Méthodologie](#methodologie)   
+
+### III. [Modelisation](#modelisation)
+
+#### A-[Machine Learning](#ml)     
    1. [Preprocessing](#preprocessing)
    2. [Métriques des tests](#metric)
    3. [Itération des Modèles](#iteration)
@@ -47,14 +50,14 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
    5. [Optimisation des paramètres: Tuning](#tuning)
    6. [Interprétatbilité du Modèle](#retainmode)
   
- #### B- [DEEP LEARNING](#deep) 
+#### B- [Deep Learning](#deep) 
    1. [Preprocessing](#preprocessing_deep)
    
    2. [Convolutional Neural Network](#cnn)
    
    3. [Résultats](#deepresult)
  
-#### III. [Conclusion](#conclusion) 
+### IV. [Conclusion](#conclusion) 
    
 ---
 ###  Contexte du Projet  <a name="contexte"></a>
@@ -78,9 +81,9 @@ Le projet communautaire __[CAMEO3D](https://www.cameo3d.org/)__  évalue les per
   
 > _La prédiction  de la structure des protéines est l'inférence de la structure tridimensionnelle d'une protéine à partir de sa séquence d'acides aminés c'est-à-dire la prédiction de son pliage et de sa structure secondaire et tertiaire de sa structure primaire_ __[wikipedia](https://fr.wikipedia.org/wiki/Pr%C3%A9diction_de_la_structure_des_prot%C3%A9ines)__
 
- ### I. ANALYSE DES DONNEES <a name="analyse"></a>
+### I. ANALYSE DES DONNEES <a name="analyse"></a>
    ---
-### 1. Source des données  <a name="source"></a>
+#### 1. Source des données  <a name="source"></a>
 ---
 > Les données sont issues de la __[Protein Data Bank](https://www.rcsb.org/)__ (PDB). 
  Il s'agit d'un ensemble de données extrait de la base du groupe d'experts du Research Collaboratory for Structural Bioinformatics.
@@ -90,7 +93,7 @@ Le projet communautaire __[CAMEO3D](https://www.cameo3d.org/)__  évalue les per
  >> 
  >> **_séquences_:**  regroupe toutes les variables décrivant les séquences associées à chaque acide aminé (protéine) 
  
- ###### 1.  Dataset proteins
+###### 1.  Dataset proteins
 |Features               |    Types         |         Description              |
 |:----------------------|-----------------:|------------------------------------------------:|
 | Classification        | object           | classification de la molécule                   |  
@@ -121,7 +124,7 @@ Le projet communautaire __[CAMEO3D](https://www.cameo3d.org/)__  évalue les per
 
 >3 variables communes des 2 tables ont permis la fusion en un tableau unique  
  ---
-  ####  2.  Nettoyage des données   <a name="nettoyage"></a>
+####  2.  Nettoyage des données   <a name="nettoyage"></a>
  ---
 > Après la fusion des datasets, nous avons constaté un nombre non négligéable des
 données manquantes sur certaines variables. Ainsi pour garder un maximum des données,
@@ -241,17 +244,17 @@ l'intérêt grandissant de la thématique des protéines depuis 2015 (année mé
 ![seq_frequences_barplot](https://user-images.githubusercontent.com/35880186/151719278-89e8faf8-759f-4aa8-bc52-ac6bce7c493c.png)
 
 ---
-## II. Méthodologie <a name="methodologie"></a>
+### II. Méthodologie <a name="methodologie"></a>
 >> Nous avons fait le choix d'adopter une double démarche dans l'analyse des données : 
 >> - la prédiction de la structure des protéines avec des algorithmes de __Machine Learning__ par l'analyse des caractéristiques physiques des protéines
 >> - la prédiction de la structure des protéines avec des algorithmes de __Deep Learning__ en nous basant uniquement cette fois sur l'analyse des séquences protéiques 
 
-## III. Modélisation <a name ="modelisation"></a>
+### III. Modélisation <a name ="modelisation"></a>
 ---
 
-## A. Machine Learning <a name ="ml"></a>
+#### A. Machine Learning <a name ="ml"></a>
 ---
-### 1. Preprocessing des données:  <a name ="preprocessing"></a>
+##### 1. Preprocessing des données:  <a name ="preprocessing"></a>
 ---
 > L'exploration et la phase d'analyse terminées, nous avons nettoyé  et préparé le jeu de données pour l'apprentissage. 
 Cette étape nous a permis:
@@ -263,7 +266,7 @@ Cette étape nous a permis:
   - Nous avons procédé par élimination récursive des variables (RFE) selon leur poids en utilisant l'algorithme des forêts aléatoires en ne gardant que 8 variables dans le dataset final. 
 >> Les diverses étapes listées ci-dessus nous ont permis d'avoir un jeu données final de __310.000 lignes__ (__68%__ du dataset initial) et __8 features__ 
 
-### 2. Métriques des tests <a name ="metric"></a>
+##### 2. Métriques des tests <a name ="metric"></a>
 ---
 > Nous avons utilisé les métriques suivantes pour la classification de la structure protéique:
 >> __Accuracy:__ cette métrique nous a permis d'obtenir rapidement la performance de nos modèles 
@@ -272,27 +275,27 @@ Cette étape nous a permis:
 >> 
 >> __Matrices de confusion__: en détails, cette métrique nous a permis de comprendre les classifications correctes et incorrectes de des modèles. 
 
-### 3. Itération des Modèles <a name = "iteration"></a>
+##### 3. Itération des Modèles <a name = "iteration"></a>
 ---
 > Nous avons utilisé la librairie _lazypredict_ pour gérer le choix difficile de la pléthore des algorithmes de classification existant. En effet, cette bibliothèque par sa simplicité d'utilisation avec peu de codes et sans réglage des hyperparamètres nous a permis de faire le choix des meilleurs modèles à retenir, modèles auxquels seront appliqués des paramètres d'optimisations par la suite. 
 ---
-> -  #### 3.1 Itération 1 <a name = "iteration1"></a>
+> - #### 3.1 Itération 1 <a name = "iteration1"></a>
 > Nous n'avons pas eu à choisir les modèles, le choix a été opéré automatiquement par le package avec des métriques de performance des différents modèles en ordre décroissant. 
 ![Lazy_train_score](https://user-images.githubusercontent.com/35880186/153007082-c415c98a-4ed9-4dae-ba29-dd3d719fdfcd.PNG)
 >> Les algorithmes classiques de classification (regression logistique, SGDClassifier, lassoClassifier...) se sont montrés peu performants au contraire des algorithmes d'ensemble qui avec un temps d'entrainement rélativement courts affichent des métriques élèvées. 
 >> Sur les 25 modèles testés 4 se sont montrés particulièment performants et seront utilisés en troisième itération avec des paramètres d'optimisation adaptés. 
 ![Lazy_train_score_graph](https://user-images.githubusercontent.com/35880186/153006627-d04a825c-880f-4b18-9702-8779065b5ceb.PNG)
 ---
-> -  #### 3.2 Itération 2: Performances prédictives <a name = "iteration2"></a>
+> - #### 3.2 Itération 2: Performances prédictives <a name = "iteration2"></a>
 >> Pour arrêter définitivement notre choix sur les modèles retenus, nous avons testé avec le package Lazypredict les performances prédictives des 25 modèles et nous avons constaté que ces performances sont les mêmes que celles enrégistrées en apprentissage. 
 
 ![predict_train](https://user-images.githubusercontent.com/35880186/153010652-de8fac8a-bf2c-441c-a62b-3ee69015fba2.PNG)
 
-#### - Difficultés rencontrées: 
+### - Difficultés rencontrées: 
 Dans ces deux itérations, la principale difficulté rencontrée a été l'entrainement des modèles avec le package [Lazypredict](https://pypi.org/project/lazypredict/). Ce package malgré son utilité a des serieux problèmes de mise à jour qui ne facilitent pas son utilisation notamment les dépendences liées à d'autres bibliothèques. Pour sa mise en oeuvre, il nous a fallu l'installer dans un environement virtuel dédié. 
 
 ---
-> -  #### 3.3 Itération 3:  Modèles retenus <a name = "modeles"></a>
+> - #### 3.3 Itération 3:  Modèles retenus <a name = "modeles"></a>
 
 > - #### Objectif  
 > confirmer ou infirmer les prédictions du package Lazypredict des modèles prédéfinis précédemment. 
@@ -321,7 +324,7 @@ __La lecture de l'allure des courbes d'apprentissage ne nous permet pas d'exclur
  > - #### Difficultés rencontrées 
  >> Les difficultés rencontrées ont été principalement le temps d'apprentissage des modèles sur une machine de 8 Go de RAM (16 heures), ce temps a été ramèné à 4h50' dans une autre machine plus adaptée avec 16 Go de RAM
   
- #### 4. Métriques des différents modèles <a name = "metriques"></a>
+##### 4. Métriques des différents modèles <a name = "metriques"></a>
    
  Sur les 4 modèles testés, nous avons ajouté un meta modèle qui est le __voting classifier__ 
  > - #### ExtraTreesClassifier
@@ -391,7 +394,7 @@ Les packages eli5 et lime nous ont permis d'avoir une interprétation locale de 
    ![lime_decision](https://user-images.githubusercontent.com/35880186/153715039-9a7c451f-253f-4420-9ef9-b9109de5ecfc.PNG)
 
 
-## B. Deep Learning <a name ="deep"></a>
+#### B. Deep Learning <a name ="deep"></a>
 ---
 > Le but poursuivi ici est de d'obtenir la classification uniquement en se basant sur la séquence d'acides aminés. Le problème est ramené à un cas de Natural Language Processing (NLP), Sequence-to-sequence.
 Nous aborderons deux modèles de deep learning: un modèle convolutionnel à une dimension et en dernier le modèle d'apprentissage profond LSTM.
@@ -399,11 +402,11 @@ Nous aborderons deux modèles de deep learning: un modèle convolutionnel à une
 Une séquence est constitué d'une suite de lettres répresentants des acides aminés, la longueur des séquences à notre disposition va de 1 à un maximum de 5070 caractères
 ![sequence_example](https://github.com/DataScientest-Studio/structural-protein-classification/blob/main/images/sequence_example.png)
 
-### 1. Preprocessing
+##### 1. Preprocessing
 > Du jeu de données nettoyé précédemment on ne conserve que les variables __sequence__ et __target__. 
 
 
-### 2. Convolutional Neural Network (CNN)<a name="cnn"></a>
+##### 2. Convolutional Neural Network (CNN)<a name="cnn"></a>
 
 >> Les réseaux de neurone convolutionnels bien que souvent appliqués en imagerie pour la classification, peuvent aussi être utilisés dans la classification des séquences.Ici la séquence d'entrée est utilisée comme une image 1D.  
 
