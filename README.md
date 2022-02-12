@@ -48,6 +48,8 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
   
  #### B- [DEEP LEARNING](#deep)
  #### III-[Deep Modélisation](#deepmodel)
+ 
+   1. [Convolutional Neural Network](#cnn)
 ---
 ###  Contexte du Projet  <a name="contexte"></a>
 ---
@@ -373,3 +375,7 @@ L'algorithme ET s'appuie sur certaines variables importantes pour prédire les c
 > Dans cette deuxième de notre projet, nous aborderons deux modèles de deep learning: un modèle convolutionnel à une dimension et en dernier le modèle d'apprentissage profond le LSTM.
    
 #### Deep Modélisation <a name = "deepmodel"></a>
+> Notre fichier de données ayant été nettoyé dans la modélisation précédente, nous n'avons gardé que les features __sequence__ et __target__. 
+> - #### Convolutionnal Neural Network (CNN) <a name = "cnn"></a>:
+   >> Les réseaux de neurone convolutionnels bien souvent appliqués en imagerie pour la classification , peuvent aussi être utilisés dans la classification des séquences.Ici la séquence d'entrée est utilisée comme une image .  
+   
