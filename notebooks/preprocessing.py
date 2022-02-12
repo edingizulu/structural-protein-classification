@@ -305,7 +305,7 @@ def prepare_target(df, strategy='filter', threshold=5000):
 
     print(f'\033[1mComplete DataFrame has {df.shape[0]} lines and {df.shape[1]} columns')
 
-    df = format_classification(df)
+    #df = format_classification(df)
 
     if strategy == 'regroup':
         df_group = df.copy()
