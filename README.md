@@ -13,7 +13,7 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
 ------------------------------------
 
 ### Sommaire
-[Contexte du projet](#contexte)
+###[Contexte du projet](#contexte)
 
 #### I. [Analyse des données](#analyse)
    1. [Source des données](#source)
@@ -31,41 +31,38 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
        - [Sequence Feature](#seq)
 	  
 #### II-[Méthodologie](#methodologie)   
+
+#### III. Modélisation <a name ="modelisation"></a>
 #### A-[MACHINE LEARNING](#ml)     
    1. [Preprocessing](#preprocessing)
-   2. [Métriques des tests](#metric)
-   3. [Itération des Modèles](#iteration)
    
+   2. [Métriques des tests](#metric)
+   
+   3. [Itération des Modèles](#iteration)
        3.1 [Itération 1: Lazypredict()](#iteration1)
-       
        3.2 [Itération 2: Performances prédictives](#iteration2)
-       
        3.3 [Itération 3: Modèles retenus](#modeles)
        
    4. [Métrique des modèles](#metriques)
    
    5. [Optimisation des paramètres: Tuning](#tuning)
+   
    6. [Interprétatbilité du Modèle](#retainmode)
   
- #### B- [DEEP LEARNING](#deep) 
+#### B- [DEEP LEARNING](#deep) 
  
    1. [Preprocessing](#preprocessing_deep)
    
    2. [Choix des modèles](#model_dl)
    
    3. [Test des modèles](#test_dl)
-  
       3.1 [Modèle 1: CNN](#modele_cnn)
-       
       3.2 [Modèle 2: LSTM](#modele_lstm)
-   
+	  
    4. [Analyse des métriques](#metriques_dl)
    
  
-#### III. [Bilan et Perspectives](#bilan) 
-
-#### [Conclusion](#conclusion)
-   
+#### IV. [Bilan et Perspectives](#conclusion) 
 
 
 ---
@@ -73,7 +70,7 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
 ---
  > Le projet fil rouge clôturant notre formation continue de data scientiste chez Datascientest  porte sur
  **_la Structural Protein Classification_**. Ce projet se fixe pour objectif la prédiction de la structure des proteines avec des algorithmes de __Machine Learning__ et de Deep __Learning__.
- Le choix de ce projet qui ne fait pas partie du catalogue de projets proposé par nos formateurs a été laborieux:
+ Le choix de ce projet qui ne faisait pas partie du catalogue de projets proposés par nos formateurs a été laborieux:
  - dans la compréhension du sujet 
  - sa mise en oeuvre 
  - son interprétation des résultats etc.
@@ -89,8 +86,9 @@ Le projet communautaire __[CAMEO3D](https://www.cameo3d.org/)__  évalue les per
 > __[AlphaFold](https://en.wikipedia.org/wiki/AlphaFold)__  est une IA developpée par google pour la prédiction de la structure des proteines et cette application d'intélligence artificielle a notamment servi dans la prédiction de la structure des proteines du __SARS-COV-2__
   
 > _La prédiction  de la structure des protéines est l'inférence de la structure tridimensionnelle d'une protéine à partir de sa séquence d'acides aminés c'est-à-dire la prédiction de son pliage et de sa structure secondaire et tertiaire de sa structure primaire_ __[wikipedia](https://fr.wikipedia.org/wiki/Pr%C3%A9diction_de_la_structure_des_prot%C3%A9ines)__
+> Dans le cadre de ce projet, il s'agit de prédire la fonction de la molécule,càd la classe à laquelle elle appartient.
 
- ### I. ANALYSE DES DONNEES <a name="analyse"></a>
+### I. ANALYSE DES DONNEES <a name="analyse"></a>
    ---
 ### 1. Source des données  <a name="source"></a>
 ---
@@ -427,13 +425,13 @@ Nous aborderons deux modèles de deep learning: un modèle convolutionnel à une
 ---
 > Nous avons testé deux modèles :
 	
-- #### CNN1D : Convolution 1D, dans le but de considérer le problème comme une prédiction de données de séquence
+- #### CNN1D : Convolution 1D, dans le but de considérer le problème comme une prédiction de données de séquence (image 1D)
 		
 - #### LSTM  : L'ordre des acides aminés étant crucial dans la détermination de la classification, une approche avec un algorithme LSTM permet de traiter le problème comme une prédiction basée notamment sur les états précédents(acides aminés dans la séquence)
 			 
 ### 2. Convolutional Neural Network (CNN1D)<a name="cnn"></a>
 
->> Les réseaux de neurone convolutionnels bien que souvent appliqués en imagerie pour la classification, peuvent aussi être utilisés dans la classification des séquences.Ici la séquence d'entrée est utilisée comme une image 1D.  
+>> Les réseaux de neurones convolutionnels bien que souvent appliqués en imagerie pour la classification, peuvent aussi être utilisés dans la classification des séquences.Ici la séquence d'entrée est utilisée comme une image 1D.  
 
 > Comme précédemment les métriques utilisées sont les mêmes (accuracy, classification report, matrice de confusion).
 Nous avons construit le modèle convolutionnel de façon séquentielle avec des couches denses de batchnormalization, de Maxpooling1D et des couches denses full connected.  
@@ -470,22 +468,20 @@ Nous avons construit le modèle convolutionnel de façon séquentielle avec des 
 	
 > ![lstm_summary_plot'](https://user-images.githubusercontent.com/35880186/153733486-a26dc289-d584-41ea-852b-2fa1fbf98090.PNG)
 
-### 4. Analyse des métriques:  <a name ="metriques_dl"></a>
 ---
-
-#### III. Bilan et Perspectives <a name ="bilan"></a>
-	
+#### IV. Bilan et Perspectives <a name ="conclusion"></a>
 ---
-#### Conclusion <a name ="conclusion"></a>
----
-
 > Ce jeu de données extrait de la base de données du Protein Data Bank a été une opportunité pour nous de faire  l'application pratique des connaissances acquises en cours de formation. 
 
-> En effet, nous savions, en début de formation que la donnée (tabulaire, images, text et sons)  est l'outil de travail par excellence du data scientiste,
+> En effet, nous savions, en début de formation que la donnée (tabulaire, images, text et sons)  est l'outil de travail par excellence du data scientist,
 l'apprivoiser et en extraire des connaissances ne nous étaient pas évidents. 
 
+> La nature sensible des données, attachés à un secteur d'activité qui ne nous était pas forcément familier, nous a poussé à explorer en profondeur
+chaque variable et comprendre de manière globale son intérêt pour le sujet suivi. Nous avons donc testé plusieurs configuration de préprocessing (regroupement des données, filtrages des données,
+suppression des valeurs nulles, remplacement des valeurs nulles, analyses de certaines variables en détails...)
+
 > Ce projet nous a permis d'explorer la plupart des modèles de classification en machine learning et en Deep Learning et ce dernier a montré une 
-bonne efficacité en classification.
+bonne efficacité en classification. 
 
 Pour y arriver nous avons suivi différentes étapes: 
 - exploration du dataset final après fusion: dans cette étape, nous avons cherché à comprendre notre sujet d'étude mais aussi la signification de 
@@ -496,14 +492,19 @@ Pour y arriver nous avons suivi différentes étapes:
     - la data transformation, 
     - le feature engeneering, 
     - la modélisation des données, 
-    - la recherche des modèlesoptimaux de classification,
+    - la recherche des modèles optimaux de classification,
     - choix des modèles , entrainement, recherche des hyperparamètres optimaux... 
 - **Pour la partie ML, nous avons choisi toutes les variables à l'exception de la variable séquence et en DL nous avons choisi la variable sequence et classification.** 
 - Une autre découverte au cours de l'execution de ce projet : les possibilités offertes par le package Lazypredict qui en amont de l'entrainement nous a permis de choisir les modèles appropriés  avec les accuracy attendus. 
 
-> Les difficutés rencontrées n'ont pas manqué dans la réalisation de ce projet:
+> Les difficutés n'ont pas manqué dans la réalisation de ce projet:
+- la non maitrise du secteur abordé, causant quelques difficultés sur les choix à opérer notamment lors du préprocessing, et dans la détermination des classes à analyser.
 - les temps de calculs longs avec le choix assumé de garder un maximum des données 
 - les difficultés techniques liées notamment au manque d'expérience en feature engeneering
 
-> En dépit de ces difficultés et malgré le fait qu'on a travaillé à deux,  nous avons enregistré des résultats interessants.
- Touesfois l'écart entre les accuracy d'entrainement et de test incite à plus de prudence car nous sommes sans doute dans un phénomène overfitting quoi que modeste pour le ML, en deep learning cet écart a été légèrement réduit. 
+>En dépit de ces difficultés et malgré le fait qu'on a travaillé à deux,  nous avons enregistré des résultats intéressants.
+
+ En définitive, l'écart entre les accuracy d'entrainement et de test incite à plus de prudence car nous sommes sans doute dans un phénomène d'overfitting quoi que modeste pour le ML, en deep learning cet écart a été légèrement réduit. 
+ 
+ 
+ 
