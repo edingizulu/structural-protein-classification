@@ -393,13 +393,21 @@ L'algorithme ET s'appuie sur certaines variables importantes pour prédire les c
 ---
 > Nous n'avons pas pu utiliser le package shap pour une interprétation fine du modèle ExtraTrees, les shap_values n'ayant pu être extraites de la fonction explainer du module, les temps de calcul extrêment allongés (plus de 24h). Est-ce dû à la volumétrie des données? 
 Les packages eli5 et lime nous ont permis d'avoir une interprétation locale de l'algorithme. 
-- Eli5: 
+- __Eli5:__ 
    > Les coefficients associés à chaque variable sont de même ordre que les features importances vus précédemment.
 
    > 
    ![eli5_coeff](https://user-images.githubusercontent.com/35880186/153714539-9b644528-46cb-47a7-822f-06e64503232b.PNG)
-- Lime: 
-   > Ici avec le package la contribution de chaque variable dans la prédiction de "l'individu 1"
+	
+  Les contributions de chaque variable ayant prévalu dans la prédiction des classes __ribosome__ et __ligase__ correspondant aux individus 1 et 10
+	
+ ![eli5_0_algorithme_decision](https://user-images.githubusercontent.com/35880186/153779217-7d2b7d58-49be-4c95-97ef-4d31195079c4.PNG)
+	
+ ![eli5_10_algorithme_decision](https://user-images.githubusercontent.com/35880186/153779225-69beeb04-2680-4fa5-b4a7-4078ba5b3b38.PNG)
+
+- __Lime:__
+	
+   > Ici avec le package Lime la contribution de chaque variable dans la prédiction de "l'individu 1"
    
    ![lime_decision](https://user-images.githubusercontent.com/35880186/153715039-9a7c451f-253f-4420-9ef9-b9109de5ecfc.PNG)
 
