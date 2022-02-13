@@ -33,7 +33,7 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
 	  
 #### II-[Méthodologie](#methodologie)   
 
-#### III. Modélisation <a name ="modelisation"></a>
+#### III. [Modélisation ](#modelisation)
 #### A-[MACHINE LEARNING](#ml)     
    1. [Preprocessing](#preprocessing)
    
@@ -464,10 +464,13 @@ Nous avons construit le modèle convolutionnel de façon séquentielle avec des 
 	
 ![cnn_confusion_matrix](https://user-images.githubusercontent.com/35880186/153778000-17322015-9413-4351-b9c6-9b5687dce33b.png)
 
-> - #### Classification report
-	
-![cnn_classification_report_test](https://user-images.githubusercontent.com/35880186/153778039-13e5a280-4870-4558-81df-5a15b1242006.PNG)
+> - #### Classification report Train 
 
+![cnn_classification_report_train](https://user-images.githubusercontent.com/35880186/153778225-9c605b65-598d-474c-adc9-7f134eb846e8.PNG)
+	
+> - #### Classification report Test
+![cnn_classification_report_test](https://user-images.githubusercontent.com/35880186/153778039-13e5a280-4870-4558-81df-5a15b1242006.PNG)	
+	
 ---	
 > - #### 3.2 Modèle 2: LSTM <a name ="modele_lstm"></a>
 ---
@@ -475,6 +478,17 @@ Nous avons construit le modèle convolutionnel de façon séquentielle avec des 
 > ![lstm_summary_plot](https://user-images.githubusercontent.com/35880186/153733369-a9c8e540-6dce-4f75-adfb-83326e301e1a.PNG)
 	
 > ![lstm_summary_plot'](https://user-images.githubusercontent.com/35880186/153733486-a26dc289-d584-41ea-852b-2fa1fbf98090.PNG)
+
+![model_loss_accuracy_by_epoch](https://user-images.githubusercontent.com/35880186/153716413-1dc3bd1b-04d7-496d-b6fc-5d5250ffb793.png)
+   
+ > - ##### Train Test accuracy
+    
+ ![lstm_train_test_accuracy](https://user-images.githubusercontent.com/35880186/153778572-163852a6-4dcc-443b-92a7-9e13eb8f8f61.PNG)
+
+>> Le modèle __LSTM__ fait moins bien en terme de performance aussi bien sur les données d'apprentissage que test que le modèle __CNN1D__
+
+ >- #### LSTM confusion matrix 
+![lstm_confusion_matrix](https://user-images.githubusercontent.com/35880186/153778719-b6b8d874-536c-492f-b8f8-2bff89a4e1f1.png)
 
 ---
 #### IV. Bilan et Perspectives <a name ="conclusion"></a>
