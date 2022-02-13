@@ -462,6 +462,7 @@ Nous avons construit le modèle convolutionnel de façon séquentielle avec des 
 
  >> L'accuracy sur les données d'apprentissage et test sont proches et globalement le réseau convolutionnel reste moins efficace que le model ExtraTrees mais à priori il n'y a pas d'overfitting, ce qui est non négligeable dans la généralisation du modèle. 
 	
+---	
 > - #### 3.2 Modèle 2: LSTM <a name ="modele_lstm"></a>
 ---
 	
