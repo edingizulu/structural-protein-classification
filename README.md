@@ -55,15 +55,19 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
    
    3. [Test des modèles](#test_dl)
   
-    3.1 [Modèle 1: CNN1D](#modele_cnn)
-	
-    3.2 [Modèle 2: LSTM](#modele_lstm)
+      3.1 [Modèle 1: CNN](#modele_cnn)
+       
+      3.2 [Modèle 2: LSTM](#modele_lstm)
    
    4. [Analyse des métriques](#metriques_dl)
    
  
-#### III. [Conclusion](#conclusion) 
+#### III. [Bilan et Perspectives](#bilan) 
+
+#### [Conclusion](#conclusion)
    
+
+
 ---
 ###  Contexte du Projet  <a name="contexte"></a>
 ---
@@ -443,22 +447,62 @@ Nous avons construit le modèle convolutionnel de façon séquentielle avec des 
 ---
 
 > - #### 3.1 Modèle 1: CNN1D <a name = "modele_cnn"></a>
+---
 
 ![model_loss_accuracy_by_epoch](https://user-images.githubusercontent.com/35880186/153716413-1dc3bd1b-04d7-496d-b6fc-5d5250ffb793.png)
    
    > - ##### train accuracy
     
    ![train_accuracy_deep_cnn](https://user-images.githubusercontent.com/35880186/153716176-cd18df2f-0336-4370-b754-b690be6f2148.PNG)
-   ![train_deep_cnn](https://github.com/DataScientest-Studio/structural-protein-classification/blob/main/images/train_accuracy_deep_cnn.png)
+
    
    > - ##### test accuracy
-	
-![test_deep_cnn](https://github.com/DataScientest-Studio/structural-protein-classification/blob/main/images/test_accuracy_deep_cnn.png)
+
+![test_accuracy_deep_cnn](https://user-images.githubusercontent.com/35880186/153732754-ae5e77ed-6ab4-4c79-8607-8599fd5e04f1.PNG)
 
  >> L'accuracy sur les données d'apprentissage et test sont proches et globalement le réseau convolutionnel reste moins efficace que le model ExtraTrees mais à priori il n'y a pas d'overfitting, ce qui est non négligeable dans la généralisation du modèle. 
 	
 > - #### 3.2 Modèle 2: LSTM <a name ="modele_lstm"></a>
+---
+	
+> ![lstm_summary_plot](https://user-images.githubusercontent.com/35880186/153733369-a9c8e540-6dce-4f75-adfb-83326e301e1a.PNG)
+	
+> ![lstm_summary_plot'](https://user-images.githubusercontent.com/35880186/153733486-a26dc289-d584-41ea-852b-2fa1fbf98090.PNG)
 
-> ![model_lstm](https://github.com/DataScientest-Studio/structural-protein-classification/blob/main/images/model_rnn.png)
+### 4. Analyse des métriques:  <a name ="metriques_dl"></a>
+---
 
-   
+#### III. Bilan et Perspectives <a name ="bilan"></a>
+	
+---
+#### Conclusion <a name ="conclusion"></a>
+---
+
+> Ce jeu de données extrait de la base de données du Protein Data Bank a été une opportunité pour nous de faire  l'application pratique des connaissances acquises en cours de formation. 
+
+> En effet, nous savions, en début de formation que la donnée (tabulaire, images, text et sons)  est l'outil de travail par excellence du data scientiste,
+l'apprivoiser et en extraire des connaissances ne nous étaient pas évidents. 
+
+> Ce projet nous a permis d'explorer la plupart des modèles de classification en machine learning et en Deep Learning et ce dernier a montré une 
+bonne efficacité en classification.
+
+Pour y arriver nous avons suivi différentes étapes: 
+- exploration du dataset final après fusion: dans cette étape, nous avons cherché à comprendre notre sujet d'étude mais aussi la signification de 
+ toutes les variables du dataset, nous avons cherché les corrélations entre les différentes variables et avons exploré les liens entre la variable target (nous avons gardé toutes les modalités de cette variable) 
+  et les autres variables. 
+- L'étape d'exploration a été completée par:
+    - la dataviz, 
+    - la data transformation, 
+    - le feature engeneering, 
+    - la modélisation des données, 
+    - la recherche des modèlesoptimaux de classification,
+    - choix des modèles , entrainement, recherche des hyperparamètres optimaux... 
+- **Pour la partie ML, nous avons choisi toutes les variables à l'exception de la variable séquence et en DL nous avons choisi la variable sequence et classification.** 
+- Une autre découverte au cours de l'execution de ce projet : les possibilités offertes par le package Lazypredict qui en amont de l'entrainement nous a permis de choisir les modèles appropriés  avec les accuracy attendus. 
+
+> Les difficutés rencontrées n'ont pas manqué dans la réalisation de ce projet:
+- les temps de calculs longs avec le choix assumé de garder un maximum des données 
+- les difficultés techniques liées notamment au manque d'expérience en feature engeneering
+
+> En dépit de ces difficultés et malgré le fait qu'on a travaillé à deux,  nous avons enregistré des résultats interessants.
+ Touesfois l'écart entre les accuracy d'entrainement et de test incite à plus de prudence car nous sommes sans doute dans un phénomène overfitting quoi que modeste pour le ML, en deep learning cet écart a été légèrement réduit. 
