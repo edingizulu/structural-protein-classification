@@ -40,8 +40,11 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
    2. [Métriques des tests](#metric)
    
    3. [Itération des Modèles](#iteration)
+   
        3.1 [Itération 1: Lazypredict()](#iteration1)
+       
        3.2 [Itération 2: Performances prédictives](#iteration2)
+       
        3.3 [Itération 3: Modèles retenus](#modeles)
        
    4. [Métrique des modèles](#metriques)
@@ -57,12 +60,11 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
    2. [Choix des modèles](#model_dl)
    
    3. [Test des modèles](#test_dl)
-      3.1 [Modèle 1: CNN](#modele_cnn)
-      3.2 [Modèle 2: LSTM](#modele_lstm)
-	  
-   4. [Analyse des métriques](#metriques_dl)
    
- 
+      3.1 [Modèle 1: CNN1D](#modele_cnn)
+      
+      3.2 [Modèle 2: LSTM](#modele_lstm)
+	   
 #### IV. [Bilan et Perspectives](#conclusion) 
 
 
