@@ -13,7 +13,8 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
 ------------------------------------
 
 ### Sommaire
-###[Contexte du projet](#contexte)
+
+### [Contexte du projet](#contexte)
 
 #### I. [Analyse des données](#analyse)
    1. [Source des données](#source)
@@ -458,8 +459,15 @@ Nous avons construit le modèle convolutionnel de façon séquentielle avec des 
 
 ![test_accuracy_deep_cnn](https://user-images.githubusercontent.com/35880186/153732754-ae5e77ed-6ab4-4c79-8607-8599fd5e04f1.PNG)
 
- >> L'accuracy sur les données d'apprentissage et test sont proches et globalement le réseau convolutionnel reste moins efficace que le model ExtraTrees mais à priori il n'y a pas d'overfitting, ce qui est non négligeable dans la généralisation du modèle. 
+ >> L'accuracy sur les données d'apprentissage et test sont proches et globalement le réseau convolutionnel reste moins efficace que le model ExtraTrees mais à priori il n'y a pas d'overfitting, ce qui est non négligeable dans la généralisation du modèle.
+> - #### Matrice de confusion
 	
+![cnn_confusion_matrix](https://user-images.githubusercontent.com/35880186/153778000-17322015-9413-4351-b9c6-9b5687dce33b.png)
+
+> - #### Classification report
+	
+![cnn_classification_report_test](https://user-images.githubusercontent.com/35880186/153778039-13e5a280-4870-4558-81df-5a15b1242006.PNG)
+
 ---	
 > - #### 3.2 Modèle 2: LSTM <a name ="modele_lstm"></a>
 ---
