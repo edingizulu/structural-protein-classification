@@ -449,11 +449,11 @@ Nous avons construit le modèle convolutionnel de façon séquentielle avec des 
    > - ##### train accuracy
     
    ![train_accuracy_deep_cnn](https://user-images.githubusercontent.com/35880186/153716176-cd18df2f-0336-4370-b754-b690be6f2148.PNG)
-   ![train_accuracy_deep_cnn](https://github.com/DataScientest-Studio/structural-protein-classification/blob/main/images/train_accuracy_deep_cnn.png)
+   ![train_deep_cnn](https://github.com/DataScientest-Studio/structural-protein-classification/blob/main/images/train_accuracy_deep_cnn.png)
    
    > - ##### test accuracy
 	
-![test_accuracy_deep_cnn](https://github.com/DataScientest-Studio/structural-protein-classification/blob/main/images/test_accuracy_deep_cnn.png)
+![test_deep_cnn](https://github.com/DataScientest-Studio/structural-protein-classification/blob/main/images/test_accuracy_deep_cnn.png)
 
  >> L'accuracy sur les données d'apprentissage et test sont proches et globalement le réseau convolutionnel reste moins efficace que le model ExtraTrees mais à priori il n'y a pas d'overfitting, ce qui est non négligeable dans la généralisation du modèle. 
 	
