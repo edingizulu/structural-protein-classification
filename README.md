@@ -500,6 +500,12 @@ Nous avons construit le modèle convolutionnel de façon séquentielle avec des 
 
  >- #### LSTM confusion matrix 
 ![lstm_confusion_matrix](https://user-images.githubusercontent.com/35880186/153778719-b6b8d874-536c-492f-b8f8-2bff89a4e1f1.png)
+	
+> - #### Classification report Train 
+![lstm_train_classification_report](https://user-images.githubusercontent.com/35880186/153951999-480e4c86-9b5c-474a-8fd3-5313b2308f5a.PNG)
+
+> - #### Classification report Test
+![lstm_test_classification_report](https://user-images.githubusercontent.com/35880186/153952056-accf552e-37b6-49a6-88e3-3056286d657e.PNG)
 
 ---
 #### IV. Bilan et Perspectives <a name ="conclusion"></a>
