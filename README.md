@@ -1,12 +1,13 @@
-
+	
 # Structural Protein Classification 
 
 ![protein_structure](https://user-images.githubusercontent.com/35880186/149831530-3020edf8-5c2b-446f-be2b-b9f16904abcc.jpeg)
 ---
-### __NGIZULU__ Edi      
-_[linkedin](https://www.linkedin.com/in/edi-ngizulu-57256316a/)_
+### __NGIZULU__ Edi        
+_[linkedin](https://www.linkedin.com/in/edi-ngizulu-57256316a/)_ &emsp; _[Github](https://github.com/nedikas)_
+
 ### __DIALLO__ Sadou Safa  
-_[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
+_[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_ &emsp; _[Github](https://github.com/safadou)_
 
 -----------------------------------
 ###  DS Formation continue  Mai 2021 
