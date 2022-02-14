@@ -13,7 +13,8 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
 ------------------------------------
 
 ### Sommaire
-###[Contexte du projet](#contexte)
+
+### [Contexte du projet](#contexte)
 
 #### I. [Analyse des données](#analyse)
    1. [Source des données](#source)
@@ -32,15 +33,18 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
 	  
 #### II-[Méthodologie](#methodologie)   
 
-#### III. Modélisation <a name ="modelisation"></a>
+#### III. [Modélisation ](#modelisation)
 #### A-[MACHINE LEARNING](#ml)     
    1. [Preprocessing](#preprocessing)
    
    2. [Métriques des tests](#metric)
    
    3. [Itération des Modèles](#iteration)
+   
        3.1 [Itération 1: Lazypredict()](#iteration1)
+       
        3.2 [Itération 2: Performances prédictives](#iteration2)
+       
        3.3 [Itération 3: Modèles retenus](#modeles)
        
    4. [Métrique des modèles](#metriques)
@@ -56,12 +60,11 @@ _[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
    2. [Choix des modèles](#model_dl)
    
    3. [Test des modèles](#test_dl)
-      3.1 [Modèle 1: CNN](#modele_cnn)
-      3.2 [Modèle 2: LSTM](#modele_lstm)
-	  
-   4. [Analyse des métriques](#metriques_dl)
    
- 
+      3.1 [Modèle 1: CNN1D](#modele_cnn)
+      
+      3.2 [Modèle 2: LSTM](#modele_lstm)
+	   
 #### IV. [Bilan et Perspectives](#conclusion) 
 
 
@@ -390,13 +393,21 @@ L'algorithme ET s'appuie sur certaines variables importantes pour prédire les c
 ---
 > Nous n'avons pas pu utiliser le package shap pour une interprétation fine du modèle ExtraTrees, les shap_values n'ayant pu être extraites de la fonction explainer du module, les temps de calcul extrêment allongés (plus de 24h). Est-ce dû à la volumétrie des données? 
 Les packages eli5 et lime nous ont permis d'avoir une interprétation locale de l'algorithme. 
-- Eli5: 
+- __Eli5:__ 
    > Les coefficients associés à chaque variable sont de même ordre que les features importances vus précédemment.
 
    > 
    ![eli5_coeff](https://user-images.githubusercontent.com/35880186/153714539-9b644528-46cb-47a7-822f-06e64503232b.PNG)
-- Lime: 
-   > Ici avec le package la contribution de chaque variable dans la prédiction de "l'individu 1"
+	
+  Les contributions de chaque variable ayant prévalu dans la prédiction des classes __ribosome__ et __ligase__ correspondant aux individus 1 et 10
+	
+ ![eli5_0_algorithme_decision](https://user-images.githubusercontent.com/35880186/153779217-7d2b7d58-49be-4c95-97ef-4d31195079c4.PNG)
+	
+ ![eli5_10_algorithme_decision](https://user-images.githubusercontent.com/35880186/153779225-69beeb04-2680-4fa5-b4a7-4078ba5b3b38.PNG)
+
+- __Lime:__
+	
+   > Ici avec le package Lime la contribution de chaque variable dans la prédiction de "l'individu 1"
    
    ![lime_decision](https://user-images.githubusercontent.com/35880186/153715039-9a7c451f-253f-4420-9ef9-b9109de5ecfc.PNG)
 
@@ -458,7 +469,17 @@ Nous avons construit le modèle convolutionnel de façon séquentielle avec des 
 
 ![test_accuracy_deep_cnn](https://user-images.githubusercontent.com/35880186/153732754-ae5e77ed-6ab4-4c79-8607-8599fd5e04f1.PNG)
 
- >> L'accuracy sur les données d'apprentissage et test sont proches et globalement le réseau convolutionnel reste moins efficace que le model ExtraTrees mais à priori il n'y a pas d'overfitting, ce qui est non négligeable dans la généralisation du modèle. 
+ >> L'accuracy sur les données d'apprentissage et test sont proches et globalement le réseau convolutionnel reste moins efficace que le model ExtraTrees mais à priori il n'y a pas d'overfitting, ce qui est non négligeable dans la généralisation du modèle.
+> - #### Matrice de confusion
+	
+![cnn_confusion_matrix](https://user-images.githubusercontent.com/35880186/153778000-17322015-9413-4351-b9c6-9b5687dce33b.png)
+
+> - #### Classification report Train 
+
+![cnn_classification_report_train](https://user-images.githubusercontent.com/35880186/153778225-9c605b65-598d-474c-adc9-7f134eb846e8.PNG)
+	
+> - #### Classification report Test
+![cnn_classification_report_test](https://user-images.githubusercontent.com/35880186/153778039-13e5a280-4870-4558-81df-5a15b1242006.PNG)	
 	
 ---	
 > - #### 3.2 Modèle 2: LSTM <a name ="modele_lstm"></a>
@@ -467,6 +488,17 @@ Nous avons construit le modèle convolutionnel de façon séquentielle avec des 
 > ![lstm_summary_plot](https://user-images.githubusercontent.com/35880186/153733369-a9c8e540-6dce-4f75-adfb-83326e301e1a.PNG)
 	
 > ![lstm_summary_plot'](https://user-images.githubusercontent.com/35880186/153733486-a26dc289-d584-41ea-852b-2fa1fbf98090.PNG)
+
+![model_loss_accuracy_by_epoch](https://user-images.githubusercontent.com/35880186/153716413-1dc3bd1b-04d7-496d-b6fc-5d5250ffb793.png)
+   
+ > - ##### Train Test accuracy
+    
+ ![lstm_train_test_accuracy](https://user-images.githubusercontent.com/35880186/153778572-163852a6-4dcc-443b-92a7-9e13eb8f8f61.PNG)
+
+>> Le modèle __LSTM__ fait moins bien en terme de performance aussi bien sur les données d'apprentissage que test que le modèle __CNN1D__
+
+ >- #### LSTM confusion matrix 
+![lstm_confusion_matrix](https://user-images.githubusercontent.com/35880186/153778719-b6b8d874-536c-492f-b8f8-2bff89a4e1f1.png)
 
 ---
 #### IV. Bilan et Perspectives <a name ="conclusion"></a>
