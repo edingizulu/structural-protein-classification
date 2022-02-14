@@ -19,7 +19,7 @@ TEAM_MEMBERS = [
     Member(
         name="DIALLO Sadou Safa",
         linkedin_url="https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/",
-        #github_url="https://github.com/charlessutton",
+        #github_url="https://github.com/safadou",
     ),
     Member(
         name="NGIZULU Edi",
