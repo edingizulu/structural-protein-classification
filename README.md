@@ -428,7 +428,7 @@ Nous aborderons deux modèles de deep learning: un modèle convolutionnel à une
 ---
 	
 > En observant la distribution des séquences suivant le nombre de caractères, on observe que le dataframe contient essentiellement des séquences de tailles inférieur 1000. L'analyse peut être restreinte à ces séquences, pour minimiser le temps de calcul et aussi les tailles des séquences lors du padding.
-- Le problème est ramené à une analyse sequence-to-sequence, avec une phase classique de tokenization des séquences, padding sur la taille maximale choisie (1000) puis application de nos modèles.
+- Le problème est ramené à une analyse sequence-to-sequence, avec une phase classique de tokenization des séquences, padding sur la taille maximale choisie (268, moyenne) puis application de nos modèles.
 - La variable classification sera aussi encodée (LabelBinarizer) pour pouvoir la soumettre à nos modèles.
   Noter que les restrictions appliquées à la variable classification (nb d'échantillons > 5000) sont également appliquées dans cette partie	
 > Du jeu de données nettoyé précédemment on n'a  conservé que les variables __sequence__ et __target__. 
