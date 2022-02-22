@@ -3,7 +3,6 @@ from config import img_dir
 
 title = "Structural Protein Classification"
 sidebar_name = "Présentation"
-#img_dir = '../images/'
 
 def run():
 
@@ -44,7 +43,7 @@ def run():
       )
 
     st.info("""
-      **_Le but de notre projet est de prédire la classe d'une protéine, en nous basant sur les données qui décrivent sa structure ou ses propriétés_** 
+      **_Le but de notre projet est de prédire la classe d'une protéine, en nous basant sur ses propriétés physiques ou sa séquence_** 
     """ )
     #st.markdown(
     #    """

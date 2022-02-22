@@ -54,17 +54,19 @@ def run():
             """
             ### Tokenization
             - Problème de sequence-to-sequence learning 
-            - Tokenization classique, avec modèle réduit aux chaines de longueur < 1000 caractères et padding des séquences inférieures
+            - Tokenization classique, avec modèle réduit aux chaines de longueur < 268 caractères et padding des séquences inférieures
+            (Initialement testé avec la longueur maximale, puis avec une longueur de 1000 caractères)
             """
         )
 
         st.write(
             """
             ### Algorithmes testés
-            1. CNN
+            1. CNN 1D
 
             """
         )
+        st.image(img_dir+'summary_sequential_cnn1_deep.png')
 
         st.write(
             """

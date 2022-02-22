@@ -5,7 +5,7 @@ import streamlit as st
 # TODO : change TITLE, TEAM_MEMBERS and PROMOTION values in config.py.
 import config
 
-style_path ="C:/Users/engizulu/Documents/Projet_Datascientest/structural-protein-classification/streamlit_app/"
+style_path = "./"
 
 st.set_page_config(
     page_title=config.TITLE,
@@ -15,7 +15,7 @@ st.set_page_config(
 )
 
 # TODO : you can (and should) rename and add tabs in the ./tabs folder, and import them here.
-from tabs import intro, tab_eda, tab_model_ml, tab_model_deep, tab_demo_ml, tab_demo_deep
+from tabs import intro, tab_eda, tab_model_ml, tab_model_deep, tab_demo_ml, tab_demo_deep, conclusion
 
 
 with open(style_path + 'style.css', "r") as f:
@@ -34,7 +34,8 @@ TABS = OrderedDict(
         (tab_model_ml.sidebar_name, tab_model_ml),
         (tab_demo_ml.sidebar_name, tab_demo_ml),
         (tab_model_deep.sidebar_name, tab_model_deep),
-        (tab_demo_deep.sidebar_name, tab_demo_deep)
+        (tab_demo_deep.sidebar_name, tab_demo_deep),
+        (conclusion.sidebar_name, conclusion)
     ]
 )
 

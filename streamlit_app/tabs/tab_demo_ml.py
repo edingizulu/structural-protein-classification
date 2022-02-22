@@ -13,8 +13,9 @@ from config import models_dir
 title = "Demo - Model ML"
 sidebar_name = "Demo - Model ML"
 
-model_path = models_dir + "prot_clf.joblib"
-model_reduced_path= models_dir + "prot_rfe_clf.joblib"
+model_path = models_dir + "prot_clf_no_rfe.joblib"
+model_reduced_path= models_dir + "prot_clf.joblib"
+prep_path = models_dir+ 'prot_preprocessing.joblib'
 
 columns_clf = [ 'residueCount', 'resolution', 'structureMolecularWeight',
                 'crystallizationTempK', 'densityMatthews', 'densityPercentSol',
@@ -49,6 +50,7 @@ def ml_predict_with_dataframe(df):
     data = prep.handle_skewness(data)
     data = prep.scale_encode_data(data)
 
+
     for col in columns_clf:
         if col not in data.columns:
             data[col] = 0
@@ -61,15 +63,19 @@ def ml_predict_with_dataframe(df):
 
     #insert predictions and give array back
     data['predicted_labels'] = y_pred
+    data['true_labels'] = y
 
     return data
 
 def ml_predict_with_user_input(input_dict):
     #Open the model with parameters reduced to 6
     model = joblib.load(model_reduced_path)
-
-    #df = pd.DataFrame.from_dict(input_dict) #, orient='index', columns=['residueCount', 'resolution', 'structureMolecularWeight','crystallizationTempK', 'densityMatthews', 'densityPercentSol'])
+    
+    prepro = joblib.load(prep_path)
     df = pd.DataFrame(input_dict, index=[0])
+    df_prep = prepro.scale_encode_data(df)
+    st.write(df_prep)
+    st.write(df)
     y_pred = model.predict(df)
 
     return y_pred
@@ -94,33 +100,33 @@ def run():
                     with st.spinner("Please wait..."): 
                         df = ml_predict_with_dataframe(dataframe)
                     
-                    st.dataframe(data=df[['predicted_labels']]) 
+                    st.dataframe(data=df[['true_labels', 'predicted_labels']]) 
             st.markdown("--------")
 
         with st.container():
-            #manual_input =  st.button('Saisie des paramètres')
-            #st.markdown("""<hr style="height:10px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
-            #if manual_input:
-                #with placeholder.container():
+
             st.subheader("Saisie manuelle des paramètres")
 
             with st.form(key='user_inputs'):
                 col1, col2, col3 = st.columns(3)
                 with col1:
-                    residueCount  = st.number_input('residuecount')
-                    resolution    = st.number_input('resolution')
+                    residueCount = st.slider(
+                                    'residuecount',
+                                    6.0, 313236.0, step=1.0)
+
+                    resolution = st.slider('resolution', 0.64, 50.0)
                     
                 with col2:  
-                    crystallizationTempK     = st.number_input('crystallizationTempK')  
+                    crystallizationTempK = st.slider('crystallizationTempK', 4.0, 398.0)
+
                     structureMolecularWeight = st.number_input('structureMolecularWeight')
                 with col3:    
-                    densityMatthews   = st.number_input('densityMatthews')
-                    densityPercentSol = st.number_input('densityPercentSol')
+                    densityMatthews = st.slider('densityMatthews', 0.0, 99.0)
+                    densityPercentSol = st.slider('densityPercentSol', 0.0, 92.0)
                 
                 submit_button  =  st.form_submit_button(label='Predict')
                             
                 if submit_button:                       
-                    #['residueCount', 'resolution', 'structureMolecularWeight','crystallizationTempK', 'densityMatthews', 'densityPercentSol']
                     input_dict={}
                     input_dict['residueCount']             = residueCount
                     input_dict['resolution']               = resolution
@@ -129,8 +135,7 @@ def run():
                     input_dict['densityMatthews']          = densityMatthews
                     input_dict['densityPercentSol']        = densityPercentSol
 
-                    #with placeholder.container():
-                    #st.write(structureMolecularWeight)
+
                     #Make prediction
                     placeholder2 = st.empty()
                     with st.spinner("Wait.."):

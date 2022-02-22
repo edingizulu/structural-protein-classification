@@ -154,7 +154,7 @@ def run():
     """
     )
 
-    st.image(img_dir+'models_selection_accuracy.png')
+    st.image(img_dir+'model_accuracy.png')
 
     st.markdown(
     """
