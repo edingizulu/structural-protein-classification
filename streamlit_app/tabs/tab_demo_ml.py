@@ -13,9 +13,10 @@ from config import models_dir
 title = "Demo - Model ML"
 sidebar_name = "Demo - Model ML"
 
-model_path = models_dir + "prot_clf_no_rfe.joblib"
-model_reduced_path= models_dir + "prot_clf.joblib"
-prep_path = models_dir+ 'prot_preprocessing.joblib'
+#model_path = models_dir + "prot_clf_no_rfe_1.joblib"
+model_path = models_dir + "ext_model.sav"
+model_reduced_path= models_dir + "prot_clf_1.joblib"
+prep_path = models_dir+ 'prot_preprocessing_1.joblib'
 
 columns_clf = [ 'residueCount', 'resolution', 'structureMolecularWeight',
                 'crystallizationTempK', 'densityMatthews', 'densityPercentSol',
@@ -25,7 +26,8 @@ columns_clf = [ 'residueCount', 'resolution', 'structureMolecularWeight',
 
 columns_rfe_clf = ['residueCount', 'resolution', 'structureMolecularWeight','crystallizationTempK', 'densityMatthews', 'densityPercentSol']
 
-
+columns_ext_save = ['residueCount', 'resolution', 'structureMolecularWeight','crystallizationTempK', 'densityMatthews',
+ 'densityPercentSol', 'macromoleculeType_Protein', 'macromoleculeType_RNA']
 
 #Input   : Dataframe to test
 #Returns : Dataframe with prediction column, accuracy score
@@ -47,15 +49,14 @@ def ml_predict_with_dataframe(df):
     prep = pp.PreprocessingTransformer()
     data = prep.handle_missing(data)
     data = prep.reduce_modalities(data)
-    data = prep.handle_skewness(data)
     data = prep.scale_encode_data(data)
 
 
-    for col in columns_clf:
+    for col in columns_ext_save:
         if col not in data.columns:
             data[col] = 0
 
-    data = data[columns_clf]
+    data = data[columns_ext_save]
 
     print("Do the prediction: ")
     y_pred = model.predict(data)
@@ -69,13 +70,16 @@ def ml_predict_with_dataframe(df):
 
 def ml_predict_with_user_input(input_dict):
     #Open the model with parameters reduced to 6
-    model = joblib.load(model_reduced_path)
+    model = joblib.load(model_path)
     
     prepro = joblib.load(prep_path)
     df = pd.DataFrame(input_dict, index=[0])
-    df_prep = prepro.scale_encode_data(df)
-    st.write(df_prep)
-    st.write(df)
+    #df_prep = prepro.scale_encode_data(df)
+    
+    df['macromoleculeType_Protein'] = 1
+    df['macromoleculeType_RNA'] = 0
+    #st.write(df_prep)
+    #st.write(df)
     y_pred = model.predict(df)
 
     return y_pred
@@ -140,10 +144,20 @@ def run():
                     placeholder2 = st.empty()
                     with st.spinner("Wait.."):
                         predicted_class = ml_predict_with_user_input(input_dict)
-                        print(predicted_class)
+                        #print(predicted_class)
                         
                         with placeholder2.container() :
-                            st.write("Predicted class : "+ predicted_class)
+                            str = "Predicted class : "+ predicted_class[0]
+                            html_str = f"""
+                                        <style>
+                                        p.a {{
+                                        font: bold 24px Courier;
+                                        color: red;
+                                        }}
+                                        </style>
+                                        <p class="a">{str}</p>
+                                        """
+                            st.markdown(html_str, unsafe_allow_html=True)
                     
 
                     

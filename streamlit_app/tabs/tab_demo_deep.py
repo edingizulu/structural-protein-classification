@@ -83,21 +83,34 @@ def run():
 
 
     with st.form(key='user_deep_inputs'):
-        col1, col2 = st.columns(2)
-        with col1:
+        #col1, col2 = st.columns(2)
+        #with col1:
+        with st.container():
             sequence  = st.text_input('Sequence')
             submit_button  =  st.form_submit_button(label='Predict')
                         
-        with col2:  
+        #with col2:  
             placeholder = st.empty()
             if submit_button:
                 with placeholder.container():                     
                     #Make prediction
                     with st.spinner("Wait.."):
-                        y_pred = dl_cnn_predict(sequence, model, tokenizer, lb) 
-                        with placeholder.container():
-                            st.write("Prediction class : ")
-                            st.write(y_pred)
+                        y_pred = dl_cnn_predict([sequence], model, tokenizer, lb) 
+                        #with placeholder.container():
+                        #st.write("Predicted class : "+y_pred[0])
+                        #st.write(y_pred)
+                        str = "Predicted class : "+ y_pred[0]
+                        html_str = f"""
+                                    <style>
+                                    p.a {{
+                                    font: bold 24px Courier;
+                                    color: red;
+                                    }}
+                                    </style>
+                                    <p class="a">{str}</p>
+                                    """
+                        st.markdown(html_str, unsafe_allow_html=True)
+                    
                             
                     
 

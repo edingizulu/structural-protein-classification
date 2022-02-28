@@ -230,6 +230,15 @@ class PreprocessingTransformer(BaseEstimator, TransformerMixin):
             minimum amount to keep
 
         """
+        df['classification'] = df['classification'].str.lower()
+        df['classification'] = df['classification'].str.strip()
+        df['classification'] = df['classification'].str.replace('(','/', regex=False) 
+        df['classification'] = df['classification'].str.replace(',','/', regex=False) 
+        df['classification'] = df['classification'].str.replace(', ','/', regex=False) 
+        df['classification'] = df['classification'].str.replace('/ ','/', regex=False) 
+        df['classification'] = df['classification'].str.replace(')','', regex=False)  
+        
+        
         counts = df.classification.value_counts()
         types = np.asarray(counts[counts > threshold].index)
         return df[df.classification.isin(types)].copy()
