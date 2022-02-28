@@ -3,3 +3,7 @@ matplotlib
 sklearn
 itertools
 importlib
+matplotlib.pyplot
+numpy 
+seaborn
+tensorflow

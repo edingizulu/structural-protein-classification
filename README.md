@@ -1,12 +1,13 @@
-
+	
 # Structural Protein Classification 
 
 ![protein_structure](https://user-images.githubusercontent.com/35880186/149831530-3020edf8-5c2b-446f-be2b-b9f16904abcc.jpeg)
 ---
-### __NGIZULU__ Edi      
-_[linkedin](https://www.linkedin.com/in/edi-ngizulu-57256316a/)_
+### __NGIZULU__ Edi        
+_[linkedin](https://www.linkedin.com/in/edi-ngizulu-57256316a/)_ &emsp; _[Github](https://github.com/nedikas)_
+
 ### __DIALLO__ Sadou Safa  
-_[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_
+_[linkedin](https://www.linkedin.com/in/sadou-safa-diallo-a0839b49/)_ &emsp; _[Github](https://github.com/safadou)_
 
 -----------------------------------
 ###  DS Formation continue  Mai 2021 
@@ -427,7 +428,7 @@ Nous aborderons deux modèles de deep learning: un modèle convolutionnel à une
 ---
 	
 > En observant la distribution des séquences suivant le nombre de caractères, on observe que le dataframe contient essentiellement des séquences de tailles inférieur 1000. L'analyse peut être restreinte à ces séquences, pour minimiser le temps de calcul et aussi les tailles des séquences lors du padding.
-- Le problème est ramené à une analyse sequence-to-sequence, avec une phase classique de tokenization des séquences, padding sur la taille maximale choisie (1000) puis application de nos modèles.
+- Le problème est ramené à une analyse sequence-to-sequence, avec une phase classique de tokenization des séquences, padding sur la taille maximale choisie (268, moyenne) puis application de nos modèles.
 - La variable classification sera aussi encodée (LabelBinarizer) pour pouvoir la soumettre à nos modèles.
   Noter que les restrictions appliquées à la variable classification (nb d'échantillons > 5000) sont également appliquées dans cette partie	
 > Du jeu de données nettoyé précédemment on n'a  conservé que les variables __sequence__ et __target__. 
@@ -499,6 +500,12 @@ Nous avons construit le modèle convolutionnel de façon séquentielle avec des 
 
  >- #### LSTM confusion matrix 
 ![lstm_confusion_matrix](https://user-images.githubusercontent.com/35880186/153778719-b6b8d874-536c-492f-b8f8-2bff89a4e1f1.png)
+	
+> - #### Classification report Train 
+![lstm_train_classification_report](https://user-images.githubusercontent.com/35880186/153951999-480e4c86-9b5c-474a-8fd3-5313b2308f5a.PNG)
+
+> - #### Classification report Test
+![lstm_test_classification_report](https://user-images.githubusercontent.com/35880186/153952056-accf552e-37b6-49a6-88e3-3056286d657e.PNG)
 
 ---
 #### IV. Bilan et Perspectives <a name ="conclusion"></a>
